@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="Teste" TargetType="Button">
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Background" Value="Black"></Setter>
+    </Style>
+    
+    <Style x:Key="teste2" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White"></Setter>
+    </Style>
+    
+</ResourceDictionary>

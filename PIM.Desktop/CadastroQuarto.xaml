@@ -1,0 +1,173 @@
+﻿<Window x:Class="PIM.Desktop.CadastroQuarto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PIM.Desktop"
+        mc:Ignorable="d"
+        Title="CadastroQuarto" Height="450" Width="800">
+    <Grid Background="#2C3333">
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*" MaxWidth="200"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="60*" MaxWidth="200"></ColumnDefinition>
+            <ColumnDefinition Width="10*" MaxWidth="50"></ColumnDefinition>
+            <ColumnDefinition Width="60*" MaxWidth="200"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="40" Height="40"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition MaxHeight="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label
+           Grid.Column="2"
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            HorizontalContentAlignment="Center"
+            FontSize="20"
+            FontWeight="Bold"
+            Foreground="White"  
+        >Cadastro de Quarto</Label>
+
+        <TextBox 
+            Grid.Column="2" 
+            Grid.Row="4" 
+            Grid.ColumnSpan="3"
+         />
+        <Label
+            Grid.Row="2"
+            Grid.Column="2"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Left"
+            Foreground="White"
+            Grid.RowSpan="2"
+        >Nome do Quarto:</Label>
+
+        <!-- Quantidade de Camas -->
+        <TextBox
+            Grid.Column="2" 
+            Grid.Row="6" 
+            Grid.ColumnSpan="1"  
+        />
+       
+        <Label
+            Grid.Column="2"
+            Grid.Row="5"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Foreground="White"  
+        >N° de Camas:</Label>
+        
+        <!-- Quantidade de Banheiro -->
+
+        <TextBox
+            Grid.Column="4" 
+            Grid.Row="6" 
+            Grid.ColumnSpan="1"  
+        />
+
+        <Label
+            Grid.Column="4"
+            Grid.Row="5"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Foreground="White"  
+        >N° de Banheiros:</Label>
+
+        <!-- Input Image -->
+
+        <Rectangle
+            Fill="White"
+            Grid.Column="2"
+            Grid.Row="8"
+            Grid.RowSpan="6"
+        />
+
+        <Label
+            Grid.Column="2"
+            Grid.Row="7"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Foreground="White"  
+        >Imagem do Quarto:</Label>
+
+        <!-- Descrição do Quarto -->
+
+        <TextBox
+            Grid.Column="4"
+            Grid.Row="8"
+            Grid.RowSpan="4"
+        />
+
+        <Label
+            Grid.Column="4"
+            Grid.Row="7"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Foreground="White"  
+        >Descrição do Quarto:</Label>
+
+        <!-- Valor do Quarto -->
+
+        <TextBox
+            Grid.Column="4"
+            Grid.Row="13"
+        />
+
+        <Label
+            Grid.Column="4"
+            Grid.Row="12"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Foreground="White"  
+        >Valor:</Label>
+
+        <Button
+            Grid.Row="15"
+            Grid.Column="4"
+            Margin="50 0 50 0"
+            
+            
+            
+        >Salvar</Button>
+
+
+
+
+
+
+
+
+
+
+        <Grid
+            Grid.Column="0"
+            Grid.Row="0"
+            Background="#4B5B5B"
+            Grid.RowSpan="17"
+
+        />
+
+
+    </Grid>
+    
+</Window>

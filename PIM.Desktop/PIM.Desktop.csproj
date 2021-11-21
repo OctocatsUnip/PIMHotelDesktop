@@ -51,6 +51,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="InfoQuarto.xaml.cs">
+      <DependentUpon>InfoQuarto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToDoList.xaml.cs">
       <DependentUpon>ToDoList.xaml</DependentUpon>
     </Compile>
@@ -63,6 +66,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Cardapio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InfoQuarto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -115,6 +122,33 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="quarto_teste.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Hall.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Vista.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="sino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="sair.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

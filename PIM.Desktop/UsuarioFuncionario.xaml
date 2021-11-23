@@ -9,7 +9,6 @@
     <Grid Background="#2C3333">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50*" MaxWidth="200"/>
             <ColumnDefinition Width="30*"/>
             <ColumnDefinition MaxWidth="300" Width="50*"></ColumnDefinition>
             <ColumnDefinition Width="30*"></ColumnDefinition>
@@ -35,7 +34,7 @@
         </Grid.RowDefinitions>
 
         <Label
-            Grid.Column="2"
+            Grid.Column="1"
             Grid.Row="2"
             HorizontalContentAlignment="Center"
             FontSize="20"
@@ -47,11 +46,13 @@
         <!-- Nome de Usuario -->
         <TextBox
             Grid.Row="5"
-            Grid.Column="2"   
+            Grid.Column="1"   
+            Background="Transparent"
+            Foreground="White"
         />
         <Label
             Foreground="White"
-            Grid.Column="2"
+            Grid.Column="1"
             Grid.Row="4"
             VerticalAlignment="Bottom" Height="25"
         >Nome de Usuário:</Label>
@@ -59,11 +60,13 @@
         <!-- Senha do Usuario -->
         <PasswordBox
             Grid.Row="7"
-            Grid.Column="2"   
+            Grid.Column="1"
+            Background="Transparent"
+            Foreground="White"
         />
         <Label
             Foreground="White"
-            Grid.Column="2"
+            Grid.Column="1"
             Grid.Row="6"
             VerticalAlignment="Bottom" Height="25"
         >Senha:</Label>
@@ -71,35 +74,24 @@
         <!-- Cargo -->
         <TextBox
             Grid.Row="9"
-            Grid.Column="2"   
+            Grid.Column="1" 
+            Background="Transparent"
+            Foreground="White"
         />
         <Label
             Foreground="White"
-            Grid.Column="2"
+            Grid.Column="1"
             Grid.Row="8"
             VerticalAlignment="Bottom" Height="25"
         >Cargo Exercido:</Label>
 
         <Button
-            Grid.Column="2"
+            Grid.Column="1"
             Grid.Row="11"
             Margin="50,0,50,0"
         >Salvar</Button>
 
 
-
-
-
-
-
-
-        <Grid
-            Background="#4B5B5B"
-            Grid.Column="0"
-            Grid.Row="0"
-            Grid.RowSpan="16"
-            
-        />
 
     </Grid>
 </Window>

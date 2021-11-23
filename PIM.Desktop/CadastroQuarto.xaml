@@ -10,7 +10,6 @@
 
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50*" MaxWidth="200"/>
             <ColumnDefinition Width="30*"/>
             <ColumnDefinition Width="60*" MaxWidth="200"></ColumnDefinition>
             <ColumnDefinition Width="10*" MaxWidth="50"></ColumnDefinition>
@@ -39,7 +38,7 @@
         </Grid.RowDefinitions>
 
         <Label
-           Grid.Column="2"
+           Grid.Column="1"
             Grid.Row="1"
             Grid.ColumnSpan="3"
             HorizontalContentAlignment="Center"
@@ -49,13 +48,15 @@
         >Cadastro de Quarto</Label>
 
         <TextBox 
-            Grid.Column="2" 
+            Grid.Column="1" 
             Grid.Row="4" 
             Grid.ColumnSpan="3"
+            Background="Transparent"
+            Foreground="White"
          />
         <Label
             Grid.Row="2"
-            Grid.Column="2"
+            Grid.Column="1"
             VerticalAlignment="Bottom"
             HorizontalAlignment="Left"
             Foreground="White"
@@ -64,13 +65,15 @@
 
         <!-- Quantidade de Camas -->
         <TextBox
-            Grid.Column="2" 
+            Grid.Column="1" 
             Grid.Row="6" 
-            Grid.ColumnSpan="1"  
+            Grid.ColumnSpan="1" 
+            Background="Transparent"
+            Foreground="White"
         />
        
         <Label
-            Grid.Column="2"
+            Grid.Column="1"
             Grid.Row="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
@@ -80,13 +83,15 @@
         <!-- Quantidade de Banheiro -->
 
         <TextBox
-            Grid.Column="4" 
+            Grid.Column="3" 
             Grid.Row="6" 
             Grid.ColumnSpan="1"  
+            Background="Transparent"
+            Foreground="White"
         />
 
         <Label
-            Grid.Column="4"
+            Grid.Column="3"
             Grid.Row="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
@@ -95,15 +100,15 @@
 
         <!-- Input Image -->
 
-        <Rectangle
-            Fill="White"
-            Grid.Column="2"
+        <TextBox
+            Grid.Column="1"
             Grid.Row="8"
-            Grid.RowSpan="6"
+            Background="Transparent"
+            Foreground="White"
         />
 
         <Label
-            Grid.Column="2"
+            Grid.Column="1"
             Grid.Row="7"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
@@ -113,13 +118,15 @@
         <!-- Descrição do Quarto -->
 
         <TextBox
-            Grid.Column="4"
+            Grid.Column="3"
             Grid.Row="8"
-            Grid.RowSpan="4"
+            Grid.RowSpan="3"
+            Background="Transparent"
+            Foreground="White"
         />
 
         <Label
-            Grid.Column="4"
+            Grid.Column="3"
             Grid.Row="7"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
@@ -129,22 +136,25 @@
         <!-- Valor do Quarto -->
 
         <TextBox
-            Grid.Column="4"
-            Grid.Row="13"
+            Grid.Column="1"
+            Grid.Row="10"
+            Background="Transparent"
+            Foreground="White"
         />
 
         <Label
-            Grid.Column="4"
-            Grid.Row="12"
+            Grid.Column="1"
+            Grid.Row="9"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Foreground="White"  
         >Valor:</Label>
 
         <Button
-            Grid.Row="15"
-            Grid.Column="4"
-            Margin="50 0 50 0"
+            Grid.Row="12"
+            Grid.Column="1"
+            Grid.ColumnSpan="3"
+            Margin="150 0 150 0"
             
             
             
@@ -157,15 +167,6 @@
 
 
 
-
-
-        <Grid
-            Grid.Column="0"
-            Grid.Row="0"
-            Background="#4B5B5B"
-            Grid.RowSpan="17"
-
-        />
 
 
     </Grid>

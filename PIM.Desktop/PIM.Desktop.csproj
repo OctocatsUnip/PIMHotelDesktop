@@ -73,6 +73,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CadastroFuncionarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cardapio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CadastroHospede.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -99,6 +107,12 @@
     </Compile>
     <Compile Include="CadastroQuarto.xaml.cs">
       <DependentUpon>CadastroQuarto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroFuncionarios.xaml.cs">
+      <DependentUpon>CadastroFuncionarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cardapio.xaml.cs">
+      <DependentUpon>Cardapio.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

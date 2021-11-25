@@ -51,8 +51,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Pacotes.xaml.cs">
-      <DependentUpon>Pacotes.xaml</DependentUpon>
+    <Compile Include="CadastroHospede.xaml.cs">
+      <DependentUpon>CadastroHospede.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DescricaoHospede.xaml.cs">
+      <DependentUpon>DescricaoHospede.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListaHospedes.xaml.cs">
+      <DependentUpon>ListaHospedes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Servicos.xaml.cs">
+      <DependentUpon>Servicos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioFuncionario.xaml.cs">
+      <DependentUpon>UsuarioFuncionario.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToDoList.xaml.cs">
       <DependentUpon>ToDoList.xaml</DependentUpon>
@@ -69,6 +81,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CadastroHospede.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CadastroQuarto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DescricaoHospede.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListaHospedes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,6 +104,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CadastroQuarto.xaml.cs">
+      <DependentUpon>CadastroQuarto.xaml</DependentUpon>
     </Compile>
     <Compile Include="CadastroFuncionarios.xaml.cs">
       <DependentUpon>CadastroFuncionarios.xaml</DependentUpon>
@@ -87,7 +118,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pacotes.xaml">
+    <Page Include="Servicos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsuarioFuncionario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

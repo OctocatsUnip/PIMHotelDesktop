@@ -147,6 +147,12 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
+            <Label Content="Home" HorizontalAlignment="Left" Height="34" Margin="23,68,0,0" VerticalAlignment="Top" Width="76" Foreground="#FFF3F2F2" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.605,-1.412"/>
+            <Label Content="Quartos" HorizontalAlignment="Left" Height="41" Margin="23,132,0,0" VerticalAlignment="Top" Width="76" Foreground="#FFF7F4F4" FontWeight="Bold" FontSize="16"/>
+            <Label Content="Status Gerais" HorizontalAlignment="Left" Height="29" Margin="23,173,0,0" VerticalAlignment="Top" Width="86" Foreground="#FFF5F0F0"/>
+            <Label Content="*Painel de Rservas" HorizontalAlignment="Left" Height="30" Margin="23,202,0,0" VerticalAlignment="Top" Width="111" Foreground="#FFF3E7E7"/>
+            <Label Content="Painel de Status" HorizontalAlignment="Left" Height="26" Margin="23,232,0,0" VerticalAlignment="Top" Width="111" Foreground="#FFFDF7F7"/>
+            <Label Content="Hóspedes" HorizontalAlignment="Left" Height="29" Margin="15,283,0,0" VerticalAlignment="Top" Width="94" Foreground="#FFFDF4F4" FontSize="16" FontWeight="Bold"/>
         </Grid>
 
 

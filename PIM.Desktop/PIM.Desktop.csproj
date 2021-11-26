@@ -54,6 +54,12 @@
     <Compile Include="InfoQuarto.xaml.cs">
       <DependentUpon>InfoQuarto.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PaineldeReservas.xaml.cs">
+      <DependentUpon>PaineldeReservas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PaineldeStatus.xaml.cs">
+      <DependentUpon>PaineldeStatus.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToDoList.xaml.cs">
       <DependentUpon>ToDoList.xaml</DependentUpon>
     </Compile>
@@ -91,6 +97,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PaineldeReservas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PaineldeStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ToDoList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -149,6 +163,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="sair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

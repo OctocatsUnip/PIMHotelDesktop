@@ -29,5 +29,7 @@ namespace PIM.Desktop.MVVM.Model
 
         public int Img_quarto { get; set; }
 
+        public string Descricao_quarto { get; set; }
+
     }
 }

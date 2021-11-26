@@ -35,8 +35,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -51,53 +63,65 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CadastroHospede.xaml.cs">
+    <Compile Include="Components\MenuLayout.xaml.cs">
+      <DependentUpon>MenuLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Model\QuartosModel.cs" />
+    <Compile Include="MVVM\View\CadastroHospede.xaml.cs">
       <DependentUpon>CadastroHospede.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DescricaoHospede.xaml.cs">
+    <Compile Include="MVVM\View\DescricaoHospede.xaml.cs">
       <DependentUpon>DescricaoHospede.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ListaHospedes.xaml.cs">
+    <Compile Include="MVVM\View\ListaHospedes.xaml.cs">
       <DependentUpon>ListaHospedes.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Servicos.xaml.cs">
+    <Compile Include="MVVM\View\Servicos.xaml.cs">
       <DependentUpon>Servicos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UsuarioFuncionario.xaml.cs">
+    <Compile Include="MVVM\View\UsuarioFuncionario.xaml.cs">
       <DependentUpon>UsuarioFuncionario.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ToDoList.xaml.cs">
+    <Compile Include="MVVM\View\ToDoList.xaml.cs">
       <DependentUpon>ToDoList.xaml</DependentUpon>
     </Compile>
+    <Page Include="assets\styles\MenuItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="assets\styles\style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CadastroFuncionarios.xaml">
+    <Page Include="Components\MenuLayout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\CadastroFuncionarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Cardapio.xaml">
+    <Page Include="MVVM\View\Cardapio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CadastroHospede.xaml">
+    <Page Include="MVVM\View\CadastroHospede.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CadastroQuarto.xaml">
+    <Page Include="MVVM\View\CadastroQuarto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DescricaoHospede.xaml">
+    <Page Include="MVVM\View\DescricaoHospede.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListaHospedes.xaml">
+    <Page Include="MVVM\View\ListaHospedes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="MVVM\View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -105,28 +129,28 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CadastroQuarto.xaml.cs">
+    <Compile Include="MVVM\View\CadastroQuarto.xaml.cs">
       <DependentUpon>CadastroQuarto.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CadastroFuncionarios.xaml.cs">
+    <Compile Include="MVVM\View\CadastroFuncionarios.xaml.cs">
       <DependentUpon>CadastroFuncionarios.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Cardapio.xaml.cs">
+    <Compile Include="MVVM\View\Cardapio.xaml.cs">
       <DependentUpon>Cardapio.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="MVVM\View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Servicos.xaml">
+    <Page Include="MVVM\View\Servicos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UsuarioFuncionario.xaml">
+    <Page Include="MVVM\View\UsuarioFuncionario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ToDoList.xaml">
+    <Page Include="MVVM\View\ToDoList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,13 +174,17 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\images\" />
+    <Folder Include="MVVM\ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\images\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

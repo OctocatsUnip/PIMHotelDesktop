@@ -47,7 +47,7 @@
             Foreground="White"  
         >Cadastro de Quarto</Label>
 
-        <TextBox 
+        <TextBox x:Name="room_name" 
             Grid.Column="1" 
             Grid.Row="4" 
             Grid.ColumnSpan="3"
@@ -64,7 +64,7 @@
         >Nome do Quarto:</Label>
 
         <!-- Quantidade de Camas -->
-        <TextBox
+        <TextBox x:Name="beds"
             Grid.Column="1" 
             Grid.Row="6" 
             Grid.ColumnSpan="1" 
@@ -82,7 +82,7 @@
         
         <!-- Quantidade de Banheiro -->
 
-        <TextBox
+        <TextBox x:Name="bethrooms"
             Grid.Column="3" 
             Grid.Row="6" 
             Grid.ColumnSpan="1"  
@@ -100,7 +100,7 @@
 
         <!-- Input Image -->
 
-        <TextBox
+        <TextBox x:Name="path_img"
             Grid.Column="1"
             Grid.Row="8"
             Background="Transparent"
@@ -117,7 +117,7 @@
 
         <!-- Descrição do Quarto -->
 
-        <TextBox
+        <TextBox x:Name="room_description"
             Grid.Column="3"
             Grid.Row="8"
             Grid.RowSpan="3"
@@ -135,7 +135,7 @@
 
         <!-- Valor do Quarto -->
 
-        <TextBox
+        <TextBox x:Name="room_value"
             Grid.Column="1"
             Grid.Row="10"
             Background="Transparent"

@@ -70,8 +70,14 @@
     <Compile Include="MVVM\View\CadastroHospede.xaml.cs">
       <DependentUpon>CadastroHospede.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\CadastroReserva.xaml.cs">
+      <DependentUpon>CadastroReserva.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\DescricaoHospede.xaml.cs">
       <DependentUpon>DescricaoHospede.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\DescricaoReserva.xaml.cs">
+      <DependentUpon>DescricaoReserva.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\ListaHospedes.xaml.cs">
       <DependentUpon>ListaHospedes.xaml</DependentUpon>
@@ -101,6 +107,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\CadastroReserva.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\Cardapio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -114,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\DescricaoHospede.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\DescricaoReserva.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

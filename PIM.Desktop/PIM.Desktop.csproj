@@ -63,8 +63,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ToDoList.xaml.cs">
+    <Compile Include="MVVM\View\CadastroHospede.xaml.cs">
+      <DependentUpon>CadastroHospede.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\CadastroReserva.xaml.cs">
+      <DependentUpon>CadastroReserva.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\DescricaoHospede.xaml.cs">
+      <DependentUpon>DescricaoHospede.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\DescricaoReserva.xaml.cs">
+      <DependentUpon>DescricaoReserva.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ListaHospedes.xaml.cs">
+      <DependentUpon>ListaHospedes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Servicos.xaml.cs">
+      <DependentUpon>Servicos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ToDoList.xaml.cs">
       <DependentUpon>ToDoList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\UsuarioFuncionario.xaml.cs">
+      <DependentUpon>UsuarioFuncionario.xaml</DependentUpon>
     </Compile>
     <Page Include="assets\styles\MenuItem.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -110,10 +131,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -131,9 +148,21 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ToDoList.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="MVVM\View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\Servicos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\ToDoList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\UsuarioFuncionario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -168,34 +197,31 @@
     <Resource Include="assets\images\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="quarto_teste.jpg" />
+    <Resource Include="assets\images\quarto_teste.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="x.png" />
+    <Resource Include="assets\images\x.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="check.png" />
+    <Resource Include="assets\images\check.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="pia.jpg" />
+    <Resource Include="assets\images\pia.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Hall.jpeg" />
+    <Resource Include="assets\images\Hall.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Vista.jpg" />
+    <Resource Include="assets\images\Vista.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="chat.png" />
+    <Resource Include="assets\images\chat.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="sino.png" />
+    <Resource Include="assets\images\sino.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="sair.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="logo.png" />
+    <Resource Include="assets\images\sair.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

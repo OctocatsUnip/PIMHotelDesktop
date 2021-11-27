@@ -63,6 +63,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MVVM\View\InfoQuarto.xaml.cs">
+      <DependentUpon>InfoQuarto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\Model\QuartosModel.cs" />
     <Compile Include="MVVM\View\Beneficios.xaml.cs">
       <DependentUpon>Beneficios.xaml</DependentUpon>
@@ -96,6 +99,10 @@
     <Page Include="Components\MenuLayout.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\InfoQuarto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\Beneficios.xaml">
       <SubType>Designer</SubType>
@@ -150,8 +157,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="MVVM\View\PaineldeStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\PaineldeReservas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\View\PaineldeStatus.xaml.cs">
+      <DependentUpon>PaineldeStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\PaineldeReservas.xaml.cs">
+      <DependentUpon>PaineldeReservas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -208,6 +229,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\images\sair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MVVM\View\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MVVM\View\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MVVM\View\sino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MVVM\View\sair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Hall.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MVVM\View\quarto_teste.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MVVM\View\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MVVM\View\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MVVM\View\pia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MVVM\View\Hall.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MVVM\View\Vista.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

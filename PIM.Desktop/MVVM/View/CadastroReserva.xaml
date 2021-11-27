@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PIM.Desktop.MVVM.View"
         mc:Ignorable="d"
-        Title="CadastroReserva" Height="450" Width="800"
+        Title="CadastroReserva" Height="500" Width="800"
         Background="#2C3333">
 
     <Grid>
@@ -17,199 +17,314 @@
         <Grid
               Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition MaxHeight="25"></RowDefinition>
-                <RowDefinition MaxHeight="25"></RowDefinition>
-                <RowDefinition MaxHeight="25"></RowDefinition>
-                <RowDefinition MaxHeight="25"></RowDefinition>
-                <RowDefinition MaxHeight="25"></RowDefinition>
-                <RowDefinition MaxHeight="25"></RowDefinition>
-                <RowDefinition MaxHeight="25"></RowDefinition>
-                <RowDefinition MaxHeight="25"></RowDefinition>
-                <RowDefinition MaxHeight="25"></RowDefinition>
-                <RowDefinition MaxHeight="25"></RowDefinition>
-                <RowDefinition MaxHeight="25"></RowDefinition>
-                <RowDefinition MaxHeight="10"></RowDefinition>
-                <RowDefinition MaxHeight="25"></RowDefinition>
-                <RowDefinition MaxHeight="25"></RowDefinition>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="220"/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100"></ColumnDefinition>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="80"/>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="30"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Label
-                Grid.Column="0"
-                Grid.Row="1"
-                HorizontalAlignment="Center"
-                Foreground="#fff"
-                VerticalAlignment="Center"
-                >Cliente:</Label>
-
-            <TextBox 
-                Grid.Column="1"
-                Grid.Row="1"
-                Padding="5, 3, 0, 0"
-                Background="Transparent"
-                Foreground="AliceBlue"
-             />
-            <Label
-                Grid.Column="3"
-                Grid.Row="1"
-                HorizontalAlignment="Center"
-                Foreground="#fff"
-                VerticalAlignment="Center"
-                >RG:</Label>
-
-            <TextBox 
-                Grid.Column="4"
-                Grid.Row="1"
-                Padding="5, 3, 0, 0"
-                Width="150"
-                HorizontalAlignment="Left"
-                Background="Transparent"
-                Foreground="AliceBlue"
-             />
-            <Label
-                Grid.Column="0"
-                Grid.Row="3"
-                HorizontalAlignment="Center"
-                Foreground="#fff"
-                VerticalAlignment="Center"
-                >CPF:</Label>
-
-
-            <Label
-            Grid.Column="3"
-            Grid.Row="3"
-            VerticalAlignment="Bottom"
+            Grid.Column="1"
             Foreground="White"
+            FontSize="20"
+            FontWeight="Bold"
             HorizontalAlignment="Center"
-            >Celular:</Label>
-
-            <TextBox
-            Grid.Column="4"
-            Grid.Row="3"
-            Background="Transparent"
-            Foreground="White"
+            Content="Criação da Reserva"
         />
 
-            <TextBox 
-                Grid.Column="1"
-                Grid.Row="3"
-                Padding="5, 3, 0, 0"
-                Width="150"
+            <StackPanel
+                Grid.Column="0"
+                Grid.Row="1"
+                Margin="5">
+
+                <Label
                 HorizontalAlignment="Left"
+                Foreground="#fff"
+                Content="Cliente: "
+                />
+
+                <TextBox 
                 Background="Transparent"
                 Foreground="AliceBlue"
-             />
-            <Label
-                Grid.Column="0"
-                Grid.Row="5"
-                HorizontalAlignment="Center"
+                />
+
+                <Label
+                HorizontalAlignment="Left"
                 Foreground="#fff"
+                Content="CPF"
+                />
+                <TextBox 
+                Background="Transparent"
+                Foreground="AliceBlue"
+                />
+
+                <Label
+                    Foreground="White"
+                    HorizontalAlignment="Left"
+                    Content="Telefone:"
+                />
+
+                <TextBox
+                    Background="Transparent"
+                    Foreground="White"
+                />
+                <Button
+                    Grid.Column="1"
+                    Grid.Row="4"
+                    Content="Buscar Hospede"
+                    HorizontalAlignment="Left"
+                    Margin="5"
+                />
+            </StackPanel>
+
+            <StackPanel
+                Grid.Row="2"
+                Margin="5"
+                >
+                <Label
                 VerticalAlignment="Center"
-             >Tipo de quarto:</Label>
-
-            <ComboBox
-                Grid.Column="1"
-                Grid.Row="5"
-                MaxWidth="200"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center">
-
-                <ComboBoxItem IsSelected="True">Luxo</ComboBoxItem>
-                <ComboBoxItem>Simples</ComboBoxItem>
-                <ComboBoxItem>Casal</ComboBoxItem>
-            </ComboBox>
-
-
-            <Label
-                Grid.Column="3"
-                Grid.Row="5"
                 HorizontalAlignment="Center"
+                Foreground="White"
+                FontSize="14"
+                Content="Hospedes"
+                />
+
+                <ListBox Name="listBoxHospedes"  
+                    Background="#2C3333"
+                    Foreground="White"
+                    Height="150">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Path=Nome}" 
+                                       FontSize="14" 
+                                       Grid.Row="0" 
+                                       Grid.Column="0" 
+                                       Grid.ColumnSpan="4"/>
+                                <TextBlock Text="{Binding Path=CPF}" 
+                                       FontSize="12" 
+                                       Grid.Row="1" 
+                                       Grid.Column="0"/>
+                                <TextBlock Text="{Binding Path=Telefone}" 
+                                       FontSize="12" 
+                                       Grid.Row="1" 
+                                       Grid.Column="1"/>
+                                <TextBlock Text="{Binding Path=RG}" 
+                                       FontSize="12" 
+                                       Grid.Column="1" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+            </StackPanel>
+
+
+
+            <StackPanel
+                Grid.Column="1"
+                Grid.Row="1"
+                Margin="5"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                >
+                <Label
                 Foreground="#fff"
+                HorizontalAlignment="Center"
+                Content="Check-In:"
+                />
+
+                <DatePicker/>
+
+                <Label
+                Foreground="#fff"
+                HorizontalAlignment="Center"
+                Content="Check-Out:"
+                />
+
+                <DatePicker/>
+
+                <Label
+                    HorizontalAlignment="Center"
+                    Foreground="#fff"
+                    VerticalAlignment="Center"
+                    Content="Quantidade de Camas:"
+                />
+
+                <ComboBox
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                    <ComboBoxItem IsSelected="True" Content="1"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                </ComboBox>
+
+                <Label
+                    HorizontalAlignment="Center"
+                    Foreground="#fff"
+                    VerticalAlignment="Center"
+                    Content="Quantidade de Banheiros:"
+                />
+
+                <ComboBox
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                    <ComboBoxItem IsSelected="True" Content="1"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="5"
+                >
+                <Label
                 VerticalAlignment="Center"
-             >Quarto:</Label>
-
-            <ComboBox
-                Grid.Column="4"
-                Grid.Row="5"
-                MaxWidth="200"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center">
-
-                <ComboBoxItem IsSelected="True">100</ComboBoxItem>
-                <ComboBoxItem>110</ComboBoxItem>
-                <ComboBoxItem>120</ComboBoxItem>
-            </ComboBox>
-
-
-            <Label
-                Grid.Column="0"
-                Grid.Row="7"
-                Foreground="#fff"
                 HorizontalAlignment="Center"
-                >
-                Check-In:
-            </Label>
+                Foreground="White"
+                FontSize="14"
+                Content="Quartos"
+                />
 
-            <DatePicker
-                Grid.Row="7"
-                Grid.Column="1"
-                MaxWidth="150"
-                HorizontalAlignment="Left"
-            ></DatePicker>
+                <ListBox Name="listBoxQuartos"  
+                 Background="#2C3333"
+                 Foreground="White"
+                     VerticalAlignment="Top">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Path=NomeQuarto}" 
+                                       FontSize="14" 
+                                       Grid.Row="0" 
+                                       Grid.Column="0" 
+                                       Grid.ColumnSpan="2"/>
+                                <TextBlock Text="{Binding Path=Camas}" 
+                                       FontSize="12" 
+                                       Grid.Row="1" 
+                                       Grid.Column="0"/>
+                                <TextBlock Text="{Binding Path=Banheiros}" 
+                                       FontSize="12" 
+                                       Grid.Row="1" 
+                                       Grid.Column="1"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
 
-            <Label
-                Grid.Column="3"
-                Grid.Row="7"
-                Foreground="#fff"
+            </StackPanel>
+
+
+            <StackPanel
+                Grid.Row="1"
+                 Grid.Column="2"
+                 Margin="5">
+                <Label
+                VerticalAlignment="Center"
                 HorizontalAlignment="Center"
-                >
-                Check-Out:
-            </Label>
+                Foreground="White"
+                FontSize="14"
+                Content="Beneficios"
+                />
 
-            <DatePicker
-                Grid.Row="7"
-                Grid.Column="4"
-                MaxWidth="150"
-                HorizontalAlignment="Left"
-            ></DatePicker>
+                <ListBox Name="listBoxBeneficios"
+                 Background="#2C3333"
+                 Foreground="White"
+                 VerticalAlignment="Top">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Path=NomeBeneficio}" FontSize="14" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                                <TextBlock Text="{Binding Path=ValorBeneficio}" FontSize="12" Grid.Row="1" Grid.Column="1"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
 
-            <Label
-                Grid.Column="3"
-                Grid.Row="10"
-                Foreground="#fff"
+            </StackPanel>
+
+
+            <StackPanel
+                Grid.Column="2"
+                Grid.Row="2"
                 HorizontalAlignment="Center"
+                VerticalAlignment="Top"
                 >
-                Valor:
-            </Label>
-            <TextBox 
-                Grid.Column="4"
-                Grid.Row="10"
-                Padding="5, 3, 0, 0"
-                Width="150"
+                <Label
+                Foreground="#fff"
+                Content="Valor: "
+                />
+
+                <TextBox 
+                Width="100"
                 Text="R$ "
                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
                 Background="Transparent"
                 Foreground="AliceBlue"
-             />
-            <Button
-            Grid.Column="3"
-            Grid.Row="15"
-            Margin="50 0"
-        >Editar</Button>
+                />
+            </StackPanel>
 
-            <Button
-            Grid.Column="4"
-            Grid.Row="15"
-            Margin="50 0"
-        >Salvar</Button>
+            <Grid
+                Grid.Column="2"
+                Grid.Row="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Margin="20"
+                >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button
+                Height="30" Width="60"
+                Content="Cancelar"
+                Margin="20"
+                    HorizontalAlignment="Center"
+                />
+                <Button
+                Grid.Column="1"
+                Height="30" Width="60"
+                Content="Reservar"
+                Margin="20"
+                    HorizontalAlignment="Center"
+                />
+
+            </Grid>
+
         </Grid>
     </Grid>
 </Window>

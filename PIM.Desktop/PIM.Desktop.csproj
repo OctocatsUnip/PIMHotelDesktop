@@ -76,6 +76,9 @@
     <Compile Include="MVVM\View\ListaHospedes.xaml.cs">
       <DependentUpon>ListaHospedes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\Pacotes.xaml.cs">
+      <DependentUpon>Pacotes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\Servicos.xaml.cs">
       <DependentUpon>Servicos.xaml</DependentUpon>
     </Compile>
@@ -142,6 +145,10 @@
     <Page Include="MVVM\View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\Pacotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\Servicos.xaml">
       <Generator>MSBuild:Compile</Generator>

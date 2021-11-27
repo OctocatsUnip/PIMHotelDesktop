@@ -55,5 +55,10 @@ namespace PIM.Desktop
         {
             client.PostAsJsonAsync(Url, quartos);
         }
+
+        private void room_description_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -44,10 +44,10 @@
             Background="Transparent"
         />
 
-        <Button
+        <Button x:Name="btnSalvar"
             Grid.Column="1"
             Grid.Row="5"
-            Margin="100 0 100 0"
+            Margin="100 0 100 0" Click="btnSalvar_Click"
         >Salvar</Button>
     </Grid>
 </Window>

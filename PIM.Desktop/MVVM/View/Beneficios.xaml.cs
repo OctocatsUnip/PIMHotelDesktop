@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace PIM.Desktop.MVVM.View
 {
     /// <summary>
-    /// Lógica interna para Pacotes.xaml
+    /// Lógica interna para Beneficios.xaml
     /// </summary>
-    public partial class Pacotes : Window
+    public partial class Beneficios : Window
     {
-        public Pacotes()
+        public Beneficios()
         {
             InitializeComponent();
         }

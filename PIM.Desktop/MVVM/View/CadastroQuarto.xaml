@@ -122,7 +122,7 @@
             Grid.Row="8"
             Grid.RowSpan="3"
             Background="Transparent"
-            Foreground="White"
+            Foreground="White" TextChanged="room_description_TextChanged"
         />
 
         <Label

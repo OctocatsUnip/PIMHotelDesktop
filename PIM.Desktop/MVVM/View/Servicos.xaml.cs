@@ -22,5 +22,10 @@ namespace PIM.Desktop
         {
             InitializeComponent();
         }
+
+        private void btnSalvar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

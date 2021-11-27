@@ -64,6 +64,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MVVM\Model\QuartosModel.cs" />
+    <Compile Include="MVVM\View\Beneficios.xaml.cs">
+      <DependentUpon>Beneficios.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\CadastroReserva.xaml.cs">
       <DependentUpon>CadastroReserva.xaml</DependentUpon>
     </Compile>
@@ -75,9 +78,6 @@
     </Compile>
     <Compile Include="MVVM\View\ListaHospedes.xaml.cs">
       <DependentUpon>ListaHospedes.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\Pacotes.xaml.cs">
-      <DependentUpon>Pacotes.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\Servicos.xaml.cs">
       <DependentUpon>Servicos.xaml</DependentUpon>
@@ -96,6 +96,10 @@
     <Page Include="Components\MenuLayout.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\Beneficios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\CadastroFuncionarios.xaml">
       <SubType>Designer</SubType>
@@ -138,18 +142,6 @@
     <Compile Include="MVVM\View\Cardapio.xaml.cs">
       <DependentUpon>Cardapio.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="MVVM\View\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MVVM\View\Pacotes.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MVVM\View\Servicos.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

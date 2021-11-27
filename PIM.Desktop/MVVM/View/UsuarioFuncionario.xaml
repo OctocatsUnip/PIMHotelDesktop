@@ -42,8 +42,6 @@
             Foreground="White"
         >Registrar Login:</Label>
 
-
-        <!-- Nome de Usuario -->
         <TextBox
             Grid.Row="5"
             Grid.Column="1"   
@@ -55,12 +53,13 @@
             Grid.Column="1"
             Grid.Row="4"
             VerticalAlignment="Bottom" Height="25"
-        >Nome de Usuário:</Label>
+        >CPF:</Label>
 
-        <!-- Senha do Usuario -->
-        <PasswordBox
+
+        <!-- Nome de Usuario -->
+        <TextBox
             Grid.Row="7"
-            Grid.Column="1"
+            Grid.Column="1"   
             Background="Transparent"
             Foreground="White"
         />
@@ -69,12 +68,12 @@
             Grid.Column="1"
             Grid.Row="6"
             VerticalAlignment="Bottom" Height="25"
-        >Senha:</Label>
+        >Nome de Usuário:</Label>
 
-        <!-- Cargo -->
-        <TextBox
+        <!-- Senha do Usuario -->
+        <PasswordBox
             Grid.Row="9"
-            Grid.Column="1" 
+            Grid.Column="1"
             Background="Transparent"
             Foreground="White"
         />
@@ -83,11 +82,25 @@
             Grid.Column="1"
             Grid.Row="8"
             VerticalAlignment="Bottom" Height="25"
+        >Senha:</Label>
+
+        <!-- Cargo -->
+        <TextBox
+            Grid.Row="11"
+            Grid.Column="1" 
+            Background="Transparent"
+            Foreground="White"
+        />
+        <Label
+            Foreground="White"
+            Grid.Column="1"
+            Grid.Row="10"
+            VerticalAlignment="Bottom" Height="25"
         >Cargo Exercido:</Label>
 
         <Button
             Grid.Column="1"
-            Grid.Row="11"
+            Grid.Row="13"
             Margin="50,0,50,0"
         >Salvar</Button>
 

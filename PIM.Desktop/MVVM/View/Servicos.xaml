@@ -5,90 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PIM.Desktop"
         mc:Ignorable="d"
-        Title="Servicos" Height="450" Width="800">
-    <Grid>
+        Title="Servicos" Height="244.303" Width="345.727">
+    <Grid Background="#2C3333">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*"></ColumnDefinition>
+            <ColumnDefinition Width="158*"></ColumnDefinition>
+            <ColumnDefinition Width="15*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition></RowDefinition>
-
-
+            <RowDefinition Height="49*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="28*"></RowDefinition>
+            <RowDefinition Height="22*"></RowDefinition>
+            <RowDefinition Height="22*"></RowDefinition>
+            <RowDefinition Height="22*"></RowDefinition>
+            <RowDefinition Height="64*"></RowDefinition>
         </Grid.RowDefinitions>
 
+        <Label
+            Grid.Column="1"
+            Grid.Row="0"
+            HorizontalAlignment="Center"
+            HorizontalContentAlignment="Center"
+            FontSize="24"
+            Foreground="White" Width="264" Margin="10,0"
+        >Cadastro de Serviços</Label>
 
-        <!-- Header -->
-        <Grid Grid.Row="0" Background="#D4D9D6">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <!-- Titulo -->
-            <Label
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontSize="15"
-                Grid.Column="1"
-            >Lista de Serviços</Label>
-        </Grid>
-        <Grid Grid.Row="1" Background="#4B5B5B">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="55*"/>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="30*"/>
-            </Grid.ColumnDefinitions>
+        <Label
+            Grid.Column="1"
+            Grid.Row="2"
+            Foreground="White"
+        >Nome do Serviço:</Label>
+        <TextBox
+            Grid.Column="1"
+            Grid.Row="3"
+            Foreground="White"
+            Background="Transparent"
+        />
 
-            <!-- Adiconar Serviço-->
-            <Button
-                HorizontalAlignment="Left"
-                Foreground="White"
-                Background="#4B5B5B"
-                BorderBrush="#4B5B5B"
-            >➕ Serviços</Button>
-
-            <!-- buscar Serviço-->
-            <Button
-                HorizontalAlignment="Right"
-                VerticalAlignment="Center"
-                Foreground="White"
-                Grid.Column="2"
-                Background="#4B5B5B"
-                BorderBrush="#4B5B5B"
-            >🔍</Button>
-            <TextBox
-                Grid.Column="3"
-                VerticalContentAlignment="Center"
-            >Pesquisar</TextBox>
-        </Grid>
-        
-        <!-- Main -->
-        <Grid Background="#C4C4C4" Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" BorderBrush="gray" BorderThickness="1"/>
-            <Border BorderBrush="gray" BorderThickness="1" Grid.Column="1" Grid.RowSpan="2"/>
-            <Border BorderBrush="gray" BorderThickness="1" Grid.Column="0" Grid.RowSpan="2"/>
-            <Border BorderBrush="gray" BorderThickness="1" Grid.Column="3" Grid.RowSpan="2"/>
-            <Border BorderBrush="gray" BorderThickness="1" Grid.Column="2" Grid.RowSpan="2"/>
-            <Label
-                Grid.Column="1"
-                HorizontalAlignment="Center"
-                Foreground="Black"
-            >Nome do Serviço:</Label>
-            <Label
-                Grid.Column="2"
-                HorizontalAlignment="Center"
-                Foreground="Black"
-            >Status:</Label>
-        </Grid>
+        <Button
+            Grid.Column="1"
+            Grid.Row="5"
+            Margin="100 0 100 0"
+        >Salvar</Button>
     </Grid>
 </Window>

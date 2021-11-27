@@ -34,12 +34,11 @@ namespace PIM.Desktop
 
 
        
-    }
+    }        
 
-        private async void submit_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            var quarto = new QuartosModel()
+            QuartosModel quarto = new QuartosModel()
             {
                 Nome_quarto = Convert.ToString(room_name.Text),
                 Valor_quarto = Convert.ToInt32(room_value.Text),

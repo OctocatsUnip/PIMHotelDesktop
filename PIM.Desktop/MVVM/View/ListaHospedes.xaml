@@ -5,16 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PIM.Desktop"
         mc:Ignorable="d"
-        Title="ListaHospedes" Height="751.547" Width="1168.041">
+        Title="ListaHospedes" Height="751.547" Width="1168.041"
+        Background="#2C3333"
+        >
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="389*"/>
+            <ColumnDefinition Width="385*"/>
+            <ColumnDefinition Width="386*"/>
+        </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="51*"></RowDefinition>
+            <RowDefinition Height="413*"></RowDefinition>
+            <RowDefinition Height="207*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid 
             Background="#D4D9D6" 
-            Grid.Row="0"
+            Grid.Row="0" Grid.ColumnSpan="3"
         >
             <Label
                 Margin="5,0"
@@ -23,7 +32,34 @@
                 FontSize="20"
             >➕</Label>
         </Grid>
-        <Grid Background="#C4C4C4" Grid.Row="2" Grid.RowSpan="8" Height="621" VerticalAlignment="Top" >
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="217*"></ColumnDefinition>
+                <ColumnDefinition Width="217*"></ColumnDefinition>
+                <ColumnDefinition Width="217*"></ColumnDefinition>
+                <ColumnDefinition Width="612*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox
+                Margin="22 12 0 12"
+                VerticalContentAlignment="Center"
+                FontSize="14"
+            >Filtrar</TextBox>
+            <ComboBox
+                Grid.Column="1" 
+                Margin="22 12 0 12"
+            >
+                <ComboBoxItem IsSelected="True" >Nenhum</ComboBoxItem>
+                <ComboBoxItem>Reservado</ComboBoxItem>
+                <ComboBoxItem>Em Andamento</ComboBoxItem>
+                <ComboBoxItem>Finalizado</ComboBoxItem>
+            </ComboBox>
+        </Grid>
+
+
+
+
+        <Grid Background="#2C3333" Grid.Row="2" Grid.RowSpan="2" Height="621" VerticalAlignment="Top" Margin="0,0,0,-1" Grid.ColumnSpan="3" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="130*"/>
                 <ColumnDefinition Width="250*"/>
@@ -59,6 +95,7 @@
                 HorizontalAlignment="Center" 
                 FontWeight="Bold"
                 FontSize="15"
+                Foreground="White"
             >Nome</Label>
             <Label 
                 Grid.Row="0"
@@ -66,6 +103,7 @@
                 HorizontalAlignment="Center"
                 FontWeight="Bold"
                 FontSize="15"
+                Foreground="White"
             >CPF</Label>
             <Label 
                 Grid.Row="0"
@@ -73,6 +111,7 @@
                 HorizontalAlignment="Center" 
                 FontWeight="Bold"                
                 FontSize="15"
+                Foreground="White"
             >Telefone</Label>
             <Label 
                 Grid.Row="0"
@@ -80,6 +119,7 @@
                 HorizontalAlignment="Center" 
                 FontWeight="Bold"                
                 FontSize="15"
+                Foreground="White"
             >E-mail</Label>
             <Label 
                 Grid.Row="0"
@@ -87,6 +127,7 @@
                 HorizontalAlignment="Center" 
                 FontWeight="Bold"                
                 FontSize="15"
+                Foreground="White"
             >Quarto</Label>
             <Label 
                 Grid.Row="0"
@@ -94,18 +135,8 @@
                 HorizontalAlignment="Center"                 
                 FontWeight="Bold"                
                 FontSize="15"
+                Foreground="White"
             >Status</Label>
         </Grid>
-        <TextBox 
-            HorizontalAlignment="Left" 
-            Height="25" 
-            Margin="21.999,12.5,0,0" 
-            Grid.Row="1" 
-            TextWrapping="Wrap" 
-            Text="Filtrar" 
-            FontSize="15"
-            VerticalAlignment="Top" 
-            Width="120" 
-            Background="#D4D9D6"/>
     </Grid>
 </Window>

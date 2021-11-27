@@ -85,23 +85,11 @@
         >Senha:</Label>
 
         <!-- Cargo -->
-        <TextBox
-            Grid.Row="11"
-            Grid.Column="1" 
-            Background="Transparent"
-            Foreground="White"
-        />
-        <Label
-            Foreground="White"
-            Grid.Column="1"
-            Grid.Row="10"
-            VerticalAlignment="Bottom" Height="25"
-        >Cargo Exercido:</Label>
 
         <Button
             Grid.Column="1"
-            Grid.Row="13"
-            Margin="50,0,50,0"
+            Grid.Row="11"
+            Margin="50,0"
         >Salvar</Button>
 
 

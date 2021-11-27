@@ -64,6 +64,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MVVM\Model\QuartosModel.cs" />
+    <Compile Include="MVVM\Model\ServicosModel.cs" />
     <Compile Include="MVVM\View\Beneficios.xaml.cs">
       <DependentUpon>Beneficios.xaml</DependentUpon>
     </Compile>

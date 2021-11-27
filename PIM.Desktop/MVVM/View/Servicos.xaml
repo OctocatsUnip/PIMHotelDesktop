@@ -37,7 +37,7 @@
             Grid.Row="2"
             Foreground="White"
         >Nome do Serviço:</Label>
-        <TextBox
+        <TextBox x:Name="service_name"
             Grid.Column="1"
             Grid.Row="3"
             Foreground="White"

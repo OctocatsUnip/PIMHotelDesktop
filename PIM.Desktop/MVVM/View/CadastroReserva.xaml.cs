@@ -10,6 +10,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PIM.Desktop.MVVM.Model;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace PIM.Desktop.MVVM.View
 {
@@ -18,76 +21,61 @@ namespace PIM.Desktop.MVVM.View
     /// </summary>
     public partial class CadastroReserva : Window
     {
+        private string Url = "http://localhost:5000/";
+        HttpClient client = new HttpClient();
+        
         public CadastroReserva()
         {
+            client.BaseAddress = new Uri(Url);
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+            new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json")
+                );
             InitializeComponent();
-            List<Hospede> listaHospedes = new List<Hospede>();
-            listaHospedes.Add(new Hospede()
+
+        }
+
+        private void btnCriar_Click(object sender, RoutedEventArgs e)
+        {
+            this.GetPessoa();
+        }
+
+        private void GetPessoa()
+        {
+
+            var response = client.GetStringAsync(Url + "pessoa").Result;
+            var pessoa = JsonConvert.DeserializeObject<List<PessoaModel>>(response);
+
+            listBoxHospedes.ItemsSource = pessoa;
+        }
+
+        private void btnBuscarPessoa_Click(object sender, RoutedEventArgs e)
+        {
+            var pessoa = this.GetPessoaCpf(txtCPF.Text);
+            txtNome.Text = pessoa.nome_pessoa;
+        }
+        private PessoaModel GetPessoaCpf(string cpf)
+        {
+            var response = client.GetStringAsync(Url + "pessoa/" + cpf).Result;
+            var pessoa = JsonConvert.DeserializeObject<PessoaModel>(response);
+
+            return pessoa;
+        }
+
+        private void btnInserir_Click(object sender, RoutedEventArgs e)
+        {
+            var pessoa = this.GetPessoaCpf(txtCPF.Text);
+            List<PessoaModel> listaPessoas = new List<PessoaModel>();
+            listaPessoas.Add(new PessoaModel()
             {
-                Nome = "Homer Simpson",
-                Telefone = "3322-1100",
-                CPF = "112.432.123-9"
+                nome_pessoa = pessoa.nome_pessoa,
+                cpf = pessoa.cpf,
             });
+            listBoxHospedes.Items.Add(listaPessoas);
 
-            listaHospedes.Add(new Hospede()
-            {
-                Nome = "Bruce Waine",
-                Telefone = "9988-7766",
-                CPF = "112.432.123-9"
-            });
-
-            listaHospedes.Add(new Hospede()
-            {
-                Nome = "Tony Stark",
-                Telefone = "5544-3322",
-                CPF = "112.432.123-9"
-            });
-            this.listBoxHospedes.ItemsSource = listaHospedes;
-
-            List<Beneficio> listaBeneficio = new List<Beneficio>();
-            listaBeneficio.Add(new Beneficio()
-            {
-                NomeBeneficio = "Café da Manhã",
-                ValorBeneficio = "R$ 100,00",
-            });
-
-            listaBeneficio.Add(new Beneficio()
-            {
-                NomeBeneficio = "Almoço",
-                ValorBeneficio = "R$ 50,00",
-            });
-
-            listaBeneficio.Add(new Beneficio()
-            {
-                NomeBeneficio = "Jantar",
-                ValorBeneficio = "R$ 40,00",
-            });
-
-            this.listBoxBeneficios.ItemsSource = listaBeneficio;
-
-
-            List<Quarto> listaQuarto = new List<Quarto>();
-            listaQuarto.Add(new Quarto()
-            {
-                NomeQuarto = "Familia",
-                Camas = "3",
-                Banheiros = "1"
-            });
-
-            listaQuarto.Add(new Quarto()
-            {
-                NomeQuarto = "Simples",
-                Camas = "1",
-                Banheiros = "1"
-            });
-
-            listaQuarto.Add(new Quarto()
-            {
-                NomeQuarto = "Luxo",
-                Camas = "4",
-                Banheiros = "2"
-            });
-            this.listBoxQuartos.ItemsSource = listaQuarto;
         }
     }
 }
+
+
+

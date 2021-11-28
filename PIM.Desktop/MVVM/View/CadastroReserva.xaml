@@ -43,14 +43,17 @@
                 Margin="5">
 
                 <Label
-                HorizontalAlignment="Left"
-                Foreground="#fff"
-                Content="Cliente: "
+                    Name="lblMessage"
+                    HorizontalAlignment="Left"
+                    Foreground="#fff"
+                    Content="Cliente: "
                 />
 
                 <TextBox 
-                Background="Transparent"
-                Foreground="AliceBlue"
+                    x:Name="txtNome"
+                    Background="Transparent"
+                    Foreground="AliceBlue" 
+                   
                 />
 
                 <Label
@@ -59,27 +62,32 @@
                 Content="CPF"
                 />
                 <TextBox 
-                Background="Transparent"
-                Foreground="AliceBlue"
-                />
-
-                <Label
-                    Foreground="White"
-                    HorizontalAlignment="Left"
-                    Content="Telefone:"
-                />
-
-                <TextBox
+                    Name="txtCPF"
                     Background="Transparent"
-                    Foreground="White"
+                    Foreground="AliceBlue"
                 />
-                <Button
-                    Grid.Column="1"
-                    Grid.Row="4"
-                    Content="Buscar Hospede"
-                    HorizontalAlignment="Left"
+                <StackPanel
+                    Orientation="Horizontal">
+                    <Button
+                    Name="btnBuscarPessoa"
+                    Content="Buscar"
                     Margin="5"
+                        Width="50"
+                    Click="btnBuscarPessoa_Click"
                 />
+                    <Button
+                        Name="btnInserir"
+                        Content="Inserir"
+                        Margin="5"
+                        Width="50" Click="btnInserir_Click"
+                        />
+                </StackPanel>
+                <Button
+                    x:Name="btnCarregar"
+                    Content="Criar Hospede" 
+                    Margin="5 60 0 5 "
+                    VerticalAlignment="Bottom"
+                    Click="btnCriar_Click"/>
             </StackPanel>
 
             <StackPanel
@@ -94,44 +102,15 @@
                 Content="Hospedes"
                 />
 
-                <ListBox Name="listBoxHospedes"  
+
+                <ListBox x:Name="listBoxHospedes"  
                     Background="#2C3333"
                     Foreground="White"
                     Height="150">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="100"/>
-                                    <ColumnDefinition Width="100"/>
-                                    <ColumnDefinition Width="100"/>
-                                    <ColumnDefinition Width="100"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="{Binding Path=Nome}" 
-                                       FontSize="14" 
-                                       Grid.Row="0" 
-                                       Grid.Column="0" 
-                                       Grid.ColumnSpan="4"/>
-                                <TextBlock Text="{Binding Path=CPF}" 
-                                       FontSize="12" 
-                                       Grid.Row="1" 
-                                       Grid.Column="0"/>
-                                <TextBlock Text="{Binding Path=Telefone}" 
-                                       FontSize="12" 
-                                       Grid.Row="1" 
-                                       Grid.Column="1"/>
-                                <TextBlock Text="{Binding Path=RG}" 
-                                       FontSize="12" 
-                                       Grid.Column="1" />
-                            </Grid>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
+                    <ListBoxItem>1</ListBoxItem>
+                    <ListBoxItem>2</ListBoxItem>
+                    <ListBoxItem>3</ListBoxItem>
                 </ListBox>
-
             </StackPanel>
 
 

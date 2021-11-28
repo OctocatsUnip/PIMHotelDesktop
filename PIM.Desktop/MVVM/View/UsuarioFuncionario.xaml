@@ -42,7 +42,7 @@
             Foreground="White"
         >Registrar Login:</Label>
 
-        <TextBox
+        <TextBox x:Name="cpf" 
             Grid.Row="5"
             Grid.Column="1"   
             Background="Transparent"
@@ -57,7 +57,7 @@
 
 
         <!-- Nome de Usuario -->
-        <TextBox
+        <TextBox x:Name="user_name" 
             Grid.Row="7"
             Grid.Column="1"   
             Background="Transparent"
@@ -71,7 +71,7 @@
         >Nome de Usuário:</Label>
 
         <!-- Senha do Usuario -->
-        <PasswordBox
+        <PasswordBox x:Name="password" 
             Grid.Row="9"
             Grid.Column="1"
             Background="Transparent"
@@ -89,7 +89,7 @@
         <Button
             Grid.Column="1"
             Grid.Row="11"
-            Margin="50,0"
+            Margin="50,0" Click="Button_Click"
         >Salvar</Button>
 
 

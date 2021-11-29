@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Cadastro de Funcionarios"
         Height="450"
-        Width="800"
+        Width="900"
         Background="#2C3333"
         >
     <Grid>
@@ -30,7 +30,10 @@
         <Grid
               Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition MaxHeight="25"></RowDefinition>
+                <RowDefinition MaxHeight="30"></RowDefinition>
+                <RowDefinition MaxHeight="30"></RowDefinition>
+                <RowDefinition MaxHeight="30"></RowDefinition>
+
                 <RowDefinition MaxHeight="25"></RowDefinition>
                 <RowDefinition MaxHeight="25"></RowDefinition>
                 <RowDefinition MaxHeight="25"></RowDefinition>
@@ -51,40 +54,50 @@
                     Width="80"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition
-                    Width="80"></ColumnDefinition>
+                    Width="150"></ColumnDefinition>
                 <ColumnDefinition
                     Width="120"></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
                 <ColumnDefinition
-                    Width="30"></ColumnDefinition>
+                    Width="50"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <TextBlock
+                Foreground="#fff"
+                Grid.Column="2"
+                Grid.Row="1"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="20"
+                >
+                Cadastro
+            </TextBlock>
 
             <Label
                 Grid.Column="0"
-                Grid.Row="1"
+                Grid.Row="3"
                 HorizontalAlignment="Center"
                 Foreground="#fff"
                 VerticalAlignment="Center"
                 >Nome:</Label>
 
-            <TextBox 
+            <TextBox x:Name="nome" 
                 Grid.Column="1"
-                Grid.Row="1"
+                Grid.Row="3"
                 Padding="5, 3, 0, 0"
                 Background="Transparent"
                 Foreground="AliceBlue"
              />
             <Label
                 Grid.Column="3"
-                Grid.Row="1"
+                Grid.Row="3"
                 HorizontalAlignment="Center"
                 Foreground="#fff"
                 VerticalAlignment="Center"
                 >RG:</Label>
 
-            <TextBox 
+            <TextBox x:Name="rg" 
                 Grid.Column="4"
-                Grid.Row="1"
+                Grid.Row="3"
                 Padding="5, 3, 0, 0"
                 Width="150"
                 HorizontalAlignment="Left"
@@ -93,15 +106,15 @@
              />
             <Label
                 Grid.Column="0"
-                Grid.Row="3"
+                Grid.Row="5"
                 HorizontalAlignment="Center"
                 Foreground="#fff"
                 VerticalAlignment="Center"
                 >CPF:</Label>
 
-            <TextBox 
+            <TextBox x:Name="cpf" 
                 Grid.Column="1"
-                Grid.Row="3"
+                Grid.Row="5"
                 Padding="5, 3, 0, 0"
                 Width="150"
                 HorizontalAlignment="Left"
@@ -110,15 +123,15 @@
              />
             <Label
                 Grid.Column="3"
-                Grid.Row="3"
+                Grid.Row="5"
                 HorizontalAlignment="Center"
                 Foreground="#fff"
                 VerticalAlignment="Center"
              >Sexo:</Label>
 
-            <ComboBox
+            <ComboBox x:Name="sexo"
                 Grid.Column="4"
-                Grid.Row="3"
+                Grid.Row="5"
                 MaxWidth="200"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center" SelectionChanged="ComboBox_SelectionChanged"
@@ -128,123 +141,37 @@
             </ComboBox>
             <Label
                 Grid.Column="0"
-                Grid.Row="5"
+                Grid.Row="7"
                 Foreground="#fff"
                 >
                 Nascimento:
             </Label>
             <!--<PasswordBox></PasswordBox>-->
-            <DatePicker
-                Grid.Row="5"
+            <DatePicker x:Name="nascimento"
+                Grid.Row="7"
                 Grid.Column="1"
                 MaxWidth="150"
                 HorizontalAlignment="Left"
+                        
             ></DatePicker>
+            
             <Label
                 Grid.Column="3"
-                Grid.Row="5"
-                Foreground="#fff"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                >
-                Idade:
-            </Label>
-            <TextBox
-                Grid.Column="4"
-                Grid.Row="5"
-                MaxLength="2"
-                Width="50"
-                Padding="5, 3, 0, 0"
-                HorizontalAlignment="Left"
-                Background="Transparent"
-                Foreground="AliceBlue"
-                />
-            <Label
-                Grid.Column="0"
-                Grid.Row="8"
+                Grid.Row="7"
                 Foreground="#fff"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
                 >
                 Email:
             </Label>
-            <TextBox
-                Grid.Column="1"
-                Grid.Row="8"
+            <TextBox x:Name="email"
+                Grid.Column="4"
+                Grid.Row="7"
                 Background="Transparent"
                 Foreground="AliceBlue"
                 Padding="5, 3, 0, 0"
                 />
-            <Label
-                Grid.Column="3"
-                Grid.Row="8"
-                Foreground="#fff"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                >
-                Cargo:
-            </Label>
-            <TextBox
-                Grid.Column="4"
-                Grid.Row="8"
-                Background="Transparent"
-                Foreground="AliceBlue"
-                Padding="5, 3, 0, 0"
-            />
-            <Label
-                Grid.Column="0"
-                Grid.Row="10"
-                Foreground="#fff"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                >
-                Salário:
-            </Label>
-            <TextBox
-                Grid.Column="1"
-                Grid.Row="10"
-                Background="Transparent"
-                Foreground="AliceBlue"
-                Padding="5, 3, 0, 0"
-            />
-            <Label
-                    Grid.Column="3"
-                    Grid.Row="10"
-                    Foreground="#fff"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                >
-                Horário de Entrada:
-            </Label>
-            <TextBox
-                Grid.Column="4"
-                Grid.Row="10"
-                Width="60"
-                MaxWidth="60"
-                HorizontalAlignment="Left"
-                Background="Transparent"
-                Foreground="AliceBlue"
-                Padding="5, 3, 0, 0"
-                />
-            <Label
-                Grid.Column="3"
-                Grid.Row="12"
-                Foreground="#fff"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-            >
-            Horário de Saída:
-            </Label>
-            <TextBox
-                Grid.Column="4"
-                Grid.Row="12"
-                Width="60"
-                MaxWidth="60"
-                HorizontalAlignment="Left"
-                Background="Transparent"
-                Foreground="AliceBlue"
-                Padding="5, 3, 0, 0"
-                />
+            
             <!--<Grid
                 Grid.Column="4"
                 Grid.Row="10">
@@ -266,6 +193,13 @@
                 />
 
             </Grid>-->
+            <Button x:Name="btnSalvar"
+                Grid.Column="4"
+                Grid.Row="12"
+                Width="100" Click="btnSalvar_Click"
+                >
+                Próximo
+            </Button>
             
         </Grid>
 

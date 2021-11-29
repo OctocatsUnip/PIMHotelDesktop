@@ -33,21 +33,14 @@ namespace PIM.Desktop.MVVM.View
                 );
             InitializeComponent();
 
+
         }
 
         private void btnCriar_Click(object sender, RoutedEventArgs e)
         {
-            this.GetPessoa();
+            
         }
 
-        private void GetPessoa()
-        {
-
-            var response = client.GetStringAsync(Url + "pessoa").Result;
-            var pessoa = JsonConvert.DeserializeObject<List<PessoaModel>>(response);
-
-            listBoxHospedes.ItemsSource = pessoa;
-        }
 
         private void btnBuscarPessoa_Click(object sender, RoutedEventArgs e)
         {
@@ -62,17 +55,42 @@ namespace PIM.Desktop.MVVM.View
             return pessoa;
         }
 
+
         private void btnInserir_Click(object sender, RoutedEventArgs e)
         {
-            var pessoa = this.GetPessoaCpf(txtCPF.Text);
-            List<PessoaModel> listaPessoas = new List<PessoaModel>();
-            listaPessoas.Add(new PessoaModel()
-            {
-                nome_pessoa = pessoa.nome_pessoa,
-                cpf = pessoa.cpf,
-            });
-            listBoxHospedes.Items.Add(listaPessoas);
+            listBoxHospedes.Items.Add(txtNome.Text + " - " + txtCPF.Text);
+        }
 
+
+
+
+        private void GetQuartoBanheiro(int Quantia_banheiros, int Quantia_Camas)
+        {
+            var response = client.GetStringAsync(Url + "quarto/" + Quantia_banheiros + "," + Quantia_Camas).Result;
+            var banheiro = JsonConvert.DeserializeObject<List<QuartosModel>>(response);
+            listBoxQuartos.ItemsSource = banheiro;
+        }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           this.GetQuartoBanheiro(Int16.Parse(txtBanheiro.Text), Int16.Parse(txtCamas.Text));
+
+
+        }
+
+
+        private void GetBeneficios()
+        {
+
+            var response = client.GetStringAsync(Url + "beneficios").Result;
+            var beneficios = JsonConvert.DeserializeObject<List<BeneficiosModel>>(response);
+
+            listBoxBeneficios.ItemsSource = beneficios;
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.GetBeneficios();
         }
     }
 }

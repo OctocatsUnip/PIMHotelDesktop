@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MVVM\Model\BeneficiosModel.cs" />
     <Compile Include="MVVM\Model\PessoaModel.cs" />
     <Compile Include="MVVM\Model\ReservaModel.cs" />
     <Compile Include="MVVM\View\InfoQuarto.xaml.cs">

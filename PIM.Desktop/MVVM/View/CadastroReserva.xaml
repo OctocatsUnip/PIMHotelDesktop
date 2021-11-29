@@ -43,7 +43,6 @@
                 Margin="5">
 
                 <Label
-                    Name="lblMessage"
                     HorizontalAlignment="Left"
                     Foreground="#fff"
                     Content="Cliente: "
@@ -102,15 +101,11 @@
                 Content="Hospedes"
                 />
 
-
                 <ListBox x:Name="listBoxHospedes"  
                     Background="#2C3333"
                     Foreground="White"
-                    Height="150">
-                    <ListBoxItem>1</ListBoxItem>
-                    <ListBoxItem>2</ListBoxItem>
-                    <ListBoxItem>3</ListBoxItem>
-                </ListBox>
+                    Height="150"/>
+
             </StackPanel>
 
 
@@ -144,14 +139,7 @@
                     VerticalAlignment="Center"
                     Content="Quantidade de Camas:"
                 />
-
-                <ComboBox
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
-                    <ComboBoxItem IsSelected="True" Content="1"/>
-                    <ComboBoxItem Content="2"/>
-                    <ComboBoxItem Content="3"/>
-                </ComboBox>
+                <TextBox Name="txtCamas"/>
 
                 <Label
                     HorizontalAlignment="Center"
@@ -159,33 +147,25 @@
                     VerticalAlignment="Center"
                     Content="Quantidade de Banheiros:"
                 />
-
-                <ComboBox
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
-                    <ComboBoxItem IsSelected="True" Content="1"/>
-                    <ComboBoxItem Content="2"/>
-                    <ComboBoxItem Content="3"/>
-                </ComboBox>
+                <TextBox Name="txtBanheiro"/>
             </StackPanel>
-
             <StackPanel
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="5"
                 >
-                <Label
+                <Button
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
-                Foreground="White"
                 FontSize="14"
-                Content="Quartos"
+                Content="Carregar Quartos" Click="Button_Click"
                 />
 
                 <ListBox Name="listBoxQuartos"  
                  Background="#2C3333"
                  Foreground="White"
-                     VerticalAlignment="Top">
+                         Margin="5"
+                         Height="150">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -197,16 +177,16 @@
                                     <ColumnDefinition Width="100"/>
                                     <ColumnDefinition Width="100"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="{Binding Path=NomeQuarto}" 
+                                <TextBlock Text="{Binding Path=Nome_quarto}"
                                        FontSize="14" 
                                        Grid.Row="0" 
                                        Grid.Column="0" 
                                        Grid.ColumnSpan="2"/>
-                                <TextBlock Text="{Binding Path=Camas}" 
+                                <TextBlock Text="{Binding Path=Quantia_camas}" 
                                        FontSize="12" 
                                        Grid.Row="1" 
                                        Grid.Column="0"/>
-                                <TextBlock Text="{Binding Path=Banheiros}" 
+                                <TextBlock Text="{Binding Path=Valor_quarto}" 
                                        FontSize="12" 
                                        Grid.Row="1" 
                                        Grid.Column="1"/>
@@ -222,18 +202,19 @@
                 Grid.Row="1"
                  Grid.Column="2"
                  Margin="5">
-                <Label
+                <Button
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
-                Foreground="White"
                 FontSize="14"
-                Content="Beneficios"
+                Content="Carregar Beneficios" Click="Button_Click_1"
                 />
 
                 <ListBox Name="listBoxBeneficios"
                  Background="#2C3333"
                  Foreground="White"
-                 VerticalAlignment="Top">
+                 VerticalAlignment="Top"
+                         Height="150"
+                         Margin="5">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -245,8 +226,8 @@
                                     <ColumnDefinition Width="100"/>
                                     <ColumnDefinition Width="100"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="{Binding Path=NomeBeneficio}" FontSize="14" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-                                <TextBlock Text="{Binding Path=ValorBeneficio}" FontSize="12" Grid.Row="1" Grid.Column="1"/>
+                                <TextBlock Text="{Binding Path=beneficio}" FontSize="14" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                                <TextBlock Text="{Binding Path=valor_beneficios}" FontSize="12" Grid.Row="1" Grid.Column="1"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -267,6 +248,7 @@
                 />
 
                 <TextBox 
+                    Name="txtValor"
                 Width="100"
                 Text="R$ "
                 HorizontalAlignment="Left"

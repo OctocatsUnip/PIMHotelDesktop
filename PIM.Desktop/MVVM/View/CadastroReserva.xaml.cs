@@ -82,11 +82,11 @@ namespace PIM.Desktop.MVVM.View
 
         private void GetBeneficios()
         {
-
             var response = client.GetStringAsync(Url + "beneficios").Result;
             var beneficios = JsonConvert.DeserializeObject<List<BeneficiosModel>>(response);
 
             listBoxBeneficios.ItemsSource = beneficios;
+            
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

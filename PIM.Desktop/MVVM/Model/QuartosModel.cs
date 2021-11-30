@@ -31,5 +31,10 @@ namespace PIM.Desktop.MVVM.Model
 
         public string Descricao_quarto { get; set; }
 
+        public override string ToString()
+        {
+            return this.Nome_quarto +" R$ " + this.Valor_quarto;
+        }
+
     }
 }

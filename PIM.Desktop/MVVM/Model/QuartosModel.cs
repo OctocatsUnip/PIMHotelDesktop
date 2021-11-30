@@ -21,7 +21,7 @@ namespace PIM.Desktop.MVVM.Model
 
         public string Nome_quarto { get; set; }
 
-        public int Valor_quarto { get; set; }
+        public decimal Valor_quarto { get; set; }
 
         public int Quantia_camas { get; set; }
 
@@ -30,6 +30,11 @@ namespace PIM.Desktop.MVVM.Model
         public int Img_quarto { get; set; }
 
         public string Descricao_quarto { get; set; }
+
+        public override string ToString()
+        {
+            return this.Nome_quarto +" R$ " + this.Valor_quarto;
+        }
 
     }
 }

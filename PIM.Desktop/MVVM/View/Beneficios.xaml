@@ -26,8 +26,8 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
-
-
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock
             Foreground="#fff"
@@ -47,7 +47,7 @@
             FontSize="16">
             Preço:
         </Label>
-        <TextBox 
+        <TextBox x:Name="preco" 
             Height="23"
             Grid.Row="2"
             Grid.Column="2"
@@ -55,7 +55,7 @@
             Background="Transparent"
             Foreground="#fff"
             Padding="5, 3, 0, 0"
-            />
+            ></TextBox>
         <Label
             Foreground="#fff"
             Grid.Row="2"
@@ -65,7 +65,7 @@
             FontSize="16">
             Descrição:
         </Label>
-        <TextBox
+        <TextBox x:Name="descricao"
             TextWrapping="Wrap"
             AcceptsReturn="True"
             Grid.Row="3"
@@ -74,6 +74,13 @@
             Grid.Column="4"
             Padding="5, 3, 0, 0"
             />
+        <Button x:Name="btnSalvar"
+            Grid.Row="6"
+            Grid.Column="5"
+            Height="30" Click="btnSalvar_Click"
+            >
+            Salvar
+        </Button>
 
     </Grid>
 </Window>

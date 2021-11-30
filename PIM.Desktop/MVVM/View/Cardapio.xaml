@@ -33,7 +33,11 @@
                 Height="20"></RowDefinition>
             <RowDefinition
                 Height="60"></RowDefinition>
+            <RowDefinition
+                Height="30"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+
         </Grid.RowDefinitions>
         <TextBlock
             Grid.Column="2"
@@ -76,7 +80,7 @@
         <TextBox
             Grid.Row="5"
             Grid.Column="3"
-            Width="100"
+            Width="180"
             HorizontalAlignment="Left"
             Background="Transparent"
             Foreground="AliceBlue"
@@ -115,5 +119,13 @@
                 <ComboBoxItem>Domingo</ComboBoxItem>
             </ComboBox>
         </Grid>
+        <Button x:Name="btnSalvar"
+            Grid.Column="3"
+            Grid.Row="7"
+            Height="30"
+            Width="100"
+            >
+            Salvar
+        </Button>
     </Grid>
 </Window>

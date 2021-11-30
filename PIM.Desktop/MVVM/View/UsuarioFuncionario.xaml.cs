@@ -58,7 +58,14 @@ namespace PIM.Desktop
             }
 
             var response = client.GetStringAsync(Url + "pessoa/" + cpf).Result;
-            var pessoa = JsonConvert.DeserializeObject(response);
+            var pessoa = JsonConvert.DeserializeObject<UsuarioFuncionarioModel>(response);
+
+            if (pessoa == null)
+            {
+                MessageBox.Show("Não há nenhuma pessoa vinculada a esse CPF");
+                return;
+            }
+            MessageBox.Show("Foi");
         }
     }
 }

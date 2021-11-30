@@ -16,14 +16,13 @@ using System.Net.Http;
 namespace PIM.Desktop.MVVM.View
 {
     /// <summary>
-    /// Lógica interna para Beneficios.xaml
+    /// Lógica interna para Cargos.xaml
     /// </summary>
-    public partial class Beneficios : Window
+    public partial class Cargos : Window
     {
-        private string Url = "http://localhost:5000/beneficios";
+        private string Url = "http://localhost:5000/cargos";
         HttpClient client = new HttpClient();
-
-        public Beneficios()
+        public Cargos()
         {
             client.BaseAddress = new Uri(Url);
             client.DefaultRequestHeaders.Accept.Clear();
@@ -31,30 +30,22 @@ namespace PIM.Desktop.MVVM.View
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json")
                 );
             InitializeComponent();
-
-
-
         }
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
-
-            BeneficiosModel beneficio = new BeneficiosModel()
+            CargosModel cargo = new CargosModel()
             {
-                beneficio = Convert.ToString(descricao.Text),
-                valor_beneficio = Convert.ToDecimal(preco.Text),
-              
-                
+                nome_cargo = Convert.ToString(nome.Text)
             };
 
-            this.SaveBeneficio(beneficio);
+            this.SaveCargo(cargo);
+
         }
 
-        private void SaveBeneficio(BeneficiosModel beneficio)
+        private void SaveCargo(CargosModel cargo)
         {
-            client.PostAsJsonAsync(Url, beneficio);
+            client.PostAsJsonAsync(Url, cargo);
         }
-
-
     }
 }

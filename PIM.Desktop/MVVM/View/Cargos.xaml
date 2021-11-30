@@ -1,0 +1,63 @@
+﻿<Window x:Class="PIM.Desktop.MVVM.View.Cargos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PIM.Desktop.MVVM.View"
+        mc:Ignorable="d"
+        Title="Cargos" Height="450" Width="800"
+        Background="#2C3333"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="25"/>
+            
+            <RowDefinition />
+
+
+        </Grid.RowDefinitions>
+        <TextBlock
+            Foreground="#fff"
+            Grid.Column="2"
+            Grid.Row="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="25"
+            >Cargos</TextBlock>
+        <TextBlock
+            Foreground="#fff"
+            Grid.Column="2"
+            Grid.Row="3"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            >Nome:</TextBlock>
+        <TextBox x:Name="nome" 
+            Grid.Column="2"
+            Grid.Row="4"
+            Background="Transparent"
+            Foreground="#fff"
+            />
+        <Button x:Name="btnSalvar"
+            Grid.Column="3"
+            Grid.Row="6" Click="btnSalvar_Click"
+            Width="80"
+            HorizontalAlignment="Center"
+            >
+            Salvar
+        </Button>
+    </Grid>
+</Window>

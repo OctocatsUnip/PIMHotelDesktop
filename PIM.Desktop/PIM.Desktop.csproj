@@ -63,6 +63,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MVVM\Model\CadastroFuncionariosModel.cs" />
+    <Compile Include="MVVM\Model\BeneficiosModel.cs" />
+    <Compile Include="MVVM\Model\CargosModel.cs" />
     <Compile Include="MVVM\Model\QuartosModel.cs" />
     <Compile Include="MVVM\Model\ServicosModel.cs" />
     <Compile Include="MVVM\Model\UsuarioFuncionarioModel.cs" />
@@ -72,11 +75,17 @@
     <Compile Include="MVVM\View\CadastroReserva.xaml.cs">
       <DependentUpon>CadastroReserva.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\Cargos.xaml.cs">
+      <DependentUpon>Cargos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\DescricaoHospede.xaml.cs">
       <DependentUpon>DescricaoHospede.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\DescricaoReserva.xaml.cs">
       <DependentUpon>DescricaoReserva.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Funcionario.xaml.cs">
+      <DependentUpon>Funcionario.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\ListaHospedes.xaml.cs">
       <DependentUpon>ListaHospedes.xaml</DependentUpon>
@@ -99,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="MVVM\View\InfoQuarto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\Beneficios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -119,11 +132,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\Cargos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\DescricaoHospede.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\DescricaoReserva.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\Funcionario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,8 +173,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="MVVM\View\PaineldeStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\PaineldeReservas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\View\PaineldeStatus.xaml.cs">
+      <DependentUpon>PaineldeStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\PaineldeReservas.xaml.cs">
+      <DependentUpon>PaineldeReservas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

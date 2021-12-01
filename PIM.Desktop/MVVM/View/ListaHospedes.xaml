@@ -51,7 +51,7 @@
         <Grid Grid.Row="2">
             <DataGrid
                 Name="ToDo"
-                Background="Transparent"
+                Background="Transparent" IsReadOnly="True"
             ></DataGrid>
         </Grid>
     </Grid>

@@ -65,6 +65,7 @@
     </ApplicationDefinition>
     <Compile Include="MVVM\Model\BeneficiosModel.cs" />
     <Compile Include="MVVM\Model\FuncionariosModel.cs" />
+    <Compile Include="MVVM\Model\ListaHospedesModel .cs" />
     <Compile Include="MVVM\Model\PessoaModel.cs" />
     <Compile Include="MVVM\Model\ReservaModel.cs" />
     <Compile Include="MVVM\Model\StatusModel.cs" />

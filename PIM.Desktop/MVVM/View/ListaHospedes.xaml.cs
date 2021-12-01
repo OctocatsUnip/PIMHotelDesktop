@@ -10,6 +10,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PIM.Desktop.MVVM.Model;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace PIM.Desktop
 {
@@ -36,6 +39,14 @@ namespace PIM.Desktop
             public string Name { get; set; }
 
             public DateTime Birthday { get; set; }
+        }
+
+        private void btnPesquisar_Click(object sender, RoutedEventArgs e)
+        {
+            var response = client.GetStringAsync(Url + "pessoas/" + cpf).Result;
+            var pessoas = JsonConvert.DeserializeObject<PessoaModel>(response);
+
+            //this.SaveUsuario(usuarioFuncionario);
         }
     }
 }

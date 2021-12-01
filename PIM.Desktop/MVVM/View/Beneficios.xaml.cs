@@ -41,8 +41,8 @@ namespace PIM.Desktop.MVVM.View
 
             BeneficiosModel beneficio = new BeneficiosModel()
             {
-                beneficio = Convert.ToString(descricao.Text),
-                valor_beneficios = Convert.ToDecimal(preco.Text),
+                nome_beneficio = Convert.ToString(descricao.Text),
+                valor_beneficio = Convert.ToDecimal(preco.Text),
             };
 
             this.SaveBeneficio(beneficio);

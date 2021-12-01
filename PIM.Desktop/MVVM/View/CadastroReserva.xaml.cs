@@ -10,6 +10,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PIM.Desktop.MVVM.Model;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace PIM.Desktop.MVVM.View
 {
@@ -18,9 +21,79 @@ namespace PIM.Desktop.MVVM.View
     /// </summary>
     public partial class CadastroReserva : Window
     {
+        private string Url = "http://localhost:5000/";
+        HttpClient client = new HttpClient();
+        
         public CadastroReserva()
         {
+            client.BaseAddress = new Uri(Url);
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+            new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json")
+                );
             InitializeComponent();
+
+
+        }
+
+        private void btnCriar_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+
+        private void btnBuscarPessoa_Click(object sender, RoutedEventArgs e)
+        {
+                var pessoas = this.GetPessoaCpf(txtCPF.Text);
+                txtNome.Text = pessoas.nome;
+        }
+        private PessoaModel GetPessoaCpf(string cpf)
+        {
+            var response = client.GetStringAsync(Url + "pessoas/" + cpf).Result;
+            var pessoas = JsonConvert.DeserializeObject<PessoaModel>(response);
+
+            return pessoas;
+        }
+
+
+        private void btnInserir_Click(object sender, RoutedEventArgs e)
+        {
+            listBoxHospedes.Items.Add(txtNome.Text + " - " + txtCPF.Text);
+        }
+
+
+
+
+        private void GetQuartoBanheiro(int Quantia_banheiros, int Quantia_Camas)
+        {
+            var response = client.GetStringAsync(Url + "quartos/" + Quantia_banheiros + "," + Quantia_Camas).Result;
+            var banheiro = JsonConvert.DeserializeObject<List<QuartosModel>>(response);
+            listBoxQuartos.ItemsSource = banheiro;
+        }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           this.GetQuartoBanheiro(Int16.Parse(txtBanheiro.Text), Int16.Parse(txtCamas.Text));
+
+
+        }
+
+
+        private void GetBeneficios()
+        {
+            var response = client.GetStringAsync(Url + "beneficio").Result;
+            var beneficios = JsonConvert.DeserializeObject<List<BeneficiosModel>>(response);
+
+            listBoxBeneficios.ItemsSource = beneficios;
+            
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.GetBeneficios();
         }
     }
 }
+
+
+

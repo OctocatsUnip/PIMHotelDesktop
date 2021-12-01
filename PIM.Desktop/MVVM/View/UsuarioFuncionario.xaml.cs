@@ -57,15 +57,27 @@ namespace PIM.Desktop
                 return;
             }
 
-            var response = client.GetStringAsync(Url + "pessoa/" + cpf).Result;
-            var pessoa = JsonConvert.DeserializeObject<UsuarioFuncionarioModel>(response);
+            var response = client.GetStringAsync(Url + "pessoas/" + cpf).Result;
+            var pessoa = JsonConvert.DeserializeObject<PessoaModel>(response);
 
             if (pessoa == null)
             {
                 MessageBox.Show("Não há nenhuma pessoa vinculada a esse CPF");
                 return;
             }
-            MessageBox.Show("Foi");
+
+            response = client.GetStringAsync(Url + "funcionario/" + pessoa.id).Result;
+            var funcionario = JsonConvert.DeserializeObject<FuncionariosModel>(response);
+
+            if (funcionario == null)
+            {
+                MessageBox.Show("Essa pessoa não é um funcionário");
+                return;
+            }
+
+            client.PostAsJsonAsync(Url + "user_sistema/" + funcionario.id, usuarioFuncionario);
+
+            MessageBox.Show("Usuário registrado com sucesso");
         }
     }
 }

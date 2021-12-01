@@ -45,7 +45,7 @@ namespace PIM.Desktop.MVVM.View
         private void btnBuscarPessoa_Click(object sender, RoutedEventArgs e)
         {
             var pessoa = this.GetPessoaCpf(txtCPF.Text);
-            txtNome.Text = pessoa.nome_pessoa;
+            txtNome.Text = pessoa.nome;
         }
         private PessoaModel GetPessoaCpf(string cpf)
         {

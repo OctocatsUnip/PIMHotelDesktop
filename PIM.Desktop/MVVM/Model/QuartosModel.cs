@@ -18,7 +18,7 @@ namespace PIM.Desktop.MVVM.Model
         //    Img_quarto = _ImgQuarto;
 
         //}
-
+        public int id { get; set; }
         public string Nome_quarto { get; set; }
 
         public decimal Valor_quarto { get; set; }

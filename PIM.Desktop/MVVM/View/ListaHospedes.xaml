@@ -9,31 +9,15 @@
         Background="#2C3333"
         >
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="389*"/>
-            <ColumnDefinition Width="385*"/>
-            <ColumnDefinition Width="386*"/>
-        </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="51*"></RowDefinition>
-            <RowDefinition Height="413*"></RowDefinition>
-            <RowDefinition Height="207*"></RowDefinition>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid 
-            Background="#D4D9D6" 
-            Grid.Row="0" Grid.ColumnSpan="3"
+        <!-- Barra Superior-->
+        <Grid
+            Background="#D4D9D6"
+            Grid.Row="0"    
         >
-            <Label
-                Margin="5,0"
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Center" 
-                FontSize="20"
-            >➕</Label>
-        </Grid>
-
-        <Grid Grid.Row="1" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="217*"></ColumnDefinition>
                 <ColumnDefinition Width="217*"></ColumnDefinition>
@@ -54,89 +38,21 @@
                 <ComboBoxItem>Em Andamento</ComboBoxItem>
                 <ComboBoxItem>Finalizado</ComboBoxItem>
             </ComboBox>
+
+            <Button
+                Name="btnPesquisar"
+                Content="Pesquisar"
+                Grid.Column="2"
+                Margin="22 12 22 12"
+             />
         </Grid>
 
-
-
-
-        <Grid Background="#2C3333" Grid.Row="2" Grid.RowSpan="2" Height="621" VerticalAlignment="Top" Margin="0,0,0,-1" Grid.ColumnSpan="3" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="130*"/>
-                <ColumnDefinition Width="250*"/>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="250*"/>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="130*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <Border Grid.Row="0" Grid.Column="1"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="1"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="0" Grid.Column="2"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="2"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="0" Grid.Column="3"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="3"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="0" Grid.Column="4"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="4"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="0" Grid.Column="5"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="5"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="0" Grid.Column="6"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="6"  BorderBrush="Gray"  BorderThickness="1" />
-
-
-
-            <Label 
-                Grid.Row="0"
-                Grid.Column="1"
-                HorizontalAlignment="Center" 
-                FontWeight="Bold"
-                FontSize="15"
-                Foreground="White"
-            >Nome</Label>
-            <Label 
-                Grid.Row="0"
-                Grid.Column="2"
-                HorizontalAlignment="Center"
-                FontWeight="Bold"
-                FontSize="15"
-                Foreground="White"
-            >CPF</Label>
-            <Label 
-                Grid.Row="0"
-                Grid.Column="3"
-                HorizontalAlignment="Center" 
-                FontWeight="Bold"                
-                FontSize="15"
-                Foreground="White"
-            >Telefone</Label>
-            <Label 
-                Grid.Row="0"
-                Grid.Column="4"
-                HorizontalAlignment="Center" 
-                FontWeight="Bold"                
-                FontSize="15"
-                Foreground="White"
-            >E-mail</Label>
-            <Label 
-                Grid.Row="0"
-                Grid.Column="5"
-                HorizontalAlignment="Center" 
-                FontWeight="Bold"                
-                FontSize="15"
-                Foreground="White"
-            >Quarto</Label>
-            <Label 
-                Grid.Row="0"
-                Grid.Column="6"
-                HorizontalAlignment="Center"                 
-                FontWeight="Bold"                
-                FontSize="15"
-                Foreground="White"
-            >Status</Label>
+        <!-- Main -->
+        <Grid Grid.Row="2">
+            <DataGrid
+                Name="ToDo"
+                Background="Transparent"
+            ></DataGrid>
         </Grid>
     </Grid>
 </Window>

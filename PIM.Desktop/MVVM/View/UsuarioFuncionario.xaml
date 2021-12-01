@@ -41,6 +41,7 @@
             Foreground="White"
             Content="Registrar Login:"
         />
+
         <TextBox x:Name="cpf" 
             Grid.Row="4"
             Grid.Column="1"   
@@ -54,7 +55,9 @@
             VerticalAlignment="Bottom"
             Height="25"
             Content="CPF:"
-        />
+        /> 
+
+
         <!-- Nome de Usuario -->
         <TextBox x:Name="user_name" 
             Grid.Row="6"
@@ -70,6 +73,7 @@
             Height="25"
             Content="Nome de Usuário:"
         />
+
         <!-- Senha do Usuario -->
         <PasswordBox x:Name="password" 
             Grid.Row="8"
@@ -85,12 +89,32 @@
             Height="25"
             Content="Senha:"
         />
+
+        <!-- Cargo -->
+        <TextBox x:Name="cargo" 
+            Grid.Row="10"
+            Grid.Column="1"
+            Background="Transparent"
+            Foreground="White"
+        />
+        <Label
+            Foreground="White"
+            Grid.Column="1"
+            Grid.Row="09"
+            VerticalAlignment="Bottom" 
+            Height="25"
+            Content="Cargo:"
+        />
+
         <Button
             Grid.Column="1"
-            Grid.Row="10"
+            Grid.Row="13"
             Margin="50,0" 
             Click="Button_Click"
             Content="Salvar"
-        />
+        /> 
+
+
+
     </Grid>
 </Window>

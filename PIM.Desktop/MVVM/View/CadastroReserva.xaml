@@ -227,8 +227,8 @@
                                 <ColumnDefinition Width="100"/>
                                 <ColumnDefinition Width="100"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Path=beneficio}" FontSize="14" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-                            <TextBlock Text="{Binding Path=valor_beneficios}" FontSize="12" Grid.Row="1"/>
+                            <TextBlock Text="{Binding Path=nome_beneficio}" FontSize="14" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                            <TextBlock Text="{Binding Path=valor_beneficio, StringFormat='R$ {0}'}" FontSize="12" Grid.Row="1"/>
                             <TextBlock Text="{Binding Path=id}" FontSize="12" Grid.Row="1" Grid.Column="1"/>
                         </Grid>
                     </DataTemplate>

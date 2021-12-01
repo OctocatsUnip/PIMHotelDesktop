@@ -10,6 +10,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Net.Http;
+using Newtonsoft.Json;
+using PIM.Desktop.MVVM.Model;
 
 namespace PIM.Desktop.MVVM.View
 {
@@ -18,72 +21,57 @@ namespace PIM.Desktop.MVVM.View
     /// </summary>
     public partial class DescricaoReserva : Window
     {
+        private string Url = "http://localhost:5000/";
+        HttpClient client = new HttpClient();
         public DescricaoReserva()
         {
+            client.BaseAddress = new Uri(Url);
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+            new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json")
+                );
             InitializeComponent();
-            List<Hospede> listaHospedes = new List<Hospede>();
-            listaHospedes.Add(new Hospede()
-            {
-                Nome = "Homer Simpson",
-                Telefone = "3322-1100",
-                Status = "Pagante"
-            });
-
-            listaHospedes.Add(new Hospede()
-            {
-                Nome = "Bruce Waine",
-                Telefone = "9988-7766",
-                Status = "Hospede"
-            });
-
-            listaHospedes.Add(new Hospede()
-            {
-                Nome = "Tony Stark",
-                Telefone = "5544-3322",
-                Status = "Hospede"
-            });
-            this.listBoxHospedes.ItemsSource = listaHospedes;
-
-            List<Beneficio> listaBeneficio = new List<Beneficio>();
-            listaBeneficio.Add(new Beneficio()
-            {
-                NomeBeneficio = "Café da Manhã",
-                ValorBeneficio = "R$ 100,00",
-            });
-
-            listaBeneficio.Add(new Beneficio()
-            {
-                NomeBeneficio = "Almoço",
-                ValorBeneficio = "R$ 50,00",
-            });
-
-            listaBeneficio.Add(new Beneficio()
-            {
-                NomeBeneficio = "Jantar",
-                ValorBeneficio = "R$ 40,00",
-            });
-            this.listBoxBeneficios.ItemsSource = listaBeneficio;
         }
-    }
 
-    public class Hospede
-    {
-        public string Nome { get; set; }
-        public string Telefone { get; set; }
-        public string Status { get; set; }
-        public string CPF { get; set; }
-        public string RG { get; set; }
-    }
-    public class Beneficio
-    {
-        public string NomeBeneficio { get; set; }
-        public string ValorBeneficio { get; set; }
+        private void GetBeneficios()
+        {
+            var response = client.GetStringAsync(Url + "beneficio").Result;
+            var beneficio = JsonConvert.DeserializeObject<List<BeneficiosModel>>(response);
 
-    }
-    public class Quarto
-    {
-        public string NomeQuarto { get; set; }
-        public string Camas { get; set; }
-        public string Banheiros { get; set; }
+            listBoxBeneficios.ItemsSource = beneficio;
+
+        }
+        private void btnCarregarBeneficios_Click(object sender, RoutedEventArgs e)
+        {
+            this.GetBeneficios();
+        }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            var pessoas = this.GetPessoaCpf(txtCPF.Text);
+            txtNome.Text = pessoas.nome;
+        }
+        private PessoaModel GetPessoaCpf(string cpf)
+        {
+            var response = client.GetStringAsync(Url + "pessoas/" + cpf).Result;
+            var pessoas = JsonConvert.DeserializeObject<PessoaModel>(response);
+
+            return pessoas;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                lbBeneficiosQuarto.Items.Add(txtBeneficioSelecionado.Text);
+            }
+        }
+
+        private void GetStatus()
+        {
+            var response = client.GetStringAsync(Url + "status").Result;
+            var status = JsonConvert.DeserializeObject<List<StatusModel>>(response);
+            //cbStatus.ItemsSource = status;
+
+        }
     }
 }

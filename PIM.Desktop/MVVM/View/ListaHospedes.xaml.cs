@@ -21,6 +21,8 @@ namespace PIM.Desktop
     /// </summary>
     public partial class ListaHospedes : Window
     {
+        private string Url = "http://localhost:5000/";
+        HttpClient client = new HttpClient();
         public ListaHospedes()
         {
             InitializeComponent();
@@ -43,8 +45,8 @@ namespace PIM.Desktop
 
         private void btnPesquisar_Click(object sender, RoutedEventArgs e)
         {
-            var response = client.GetStringAsync(Url + "pessoas/" + cpf).Result;
-            var pessoas = JsonConvert.DeserializeObject<PessoaModel>(response);
+            //var response = client.GetStringAsync(Url + "pessoas/" + cpf).Result;
+            //var pessoas = JsonConvert.DeserializeObject<PessoaModel>(response);
 
             //this.SaveUsuario(usuarioFuncionario);
         }

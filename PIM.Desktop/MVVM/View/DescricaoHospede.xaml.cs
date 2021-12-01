@@ -38,7 +38,7 @@ namespace PIM.Desktop
                 Telefone = Convert.ToString(txtTelefone.Text),
                 //Tipo_Telefone = Convert.ToString(txt.Text),
                 Endereco = Convert.ToString(txtEndereco.Text),
-                Numero = Convert.ToString(txtNumero.Text),
+                //Numero = Convert.ToString(txtNumero.Text),
                 Bairro = Convert.ToString(txtBairro.Text),
                 //Cidade = Convert.ToString(txt.Text),
                 //Estado = Convert.ToString(txt.Text),

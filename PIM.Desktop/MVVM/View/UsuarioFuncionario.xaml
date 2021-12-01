@@ -90,25 +90,9 @@
             Content="Senha:"
         />
 
-        <!-- Cargo -->
-        <TextBox x:Name="cargo" 
-            Grid.Row="10"
-            Grid.Column="1"
-            Background="Transparent"
-            Foreground="White"
-        />
-        <Label
-            Foreground="White"
-            Grid.Column="1"
-            Grid.Row="09"
-            VerticalAlignment="Bottom" 
-            Height="25"
-            Content="Cargo:"
-        />
-
         <Button
             Grid.Column="1"
-            Grid.Row="13"
+            Grid.Row="10"
             Margin="50,0" 
             Click="Button_Click"
             Content="Salvar"

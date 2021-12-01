@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MVVM\Model\FuncionariosModel.cs" />
     <Compile Include="MVVM\Model\CadastroFuncionariosModel.cs" />
     <Compile Include="MVVM\Model\BeneficiosModel.cs" />
     <Compile Include="MVVM\Model\CargosModel.cs" />

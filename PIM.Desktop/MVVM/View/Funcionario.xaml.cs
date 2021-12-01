@@ -18,7 +18,7 @@ namespace PIM.Desktop.MVVM.View
     /// </summary>
     public partial class Funcionario : Window
     {
-        public Funcionario()
+        public Funcionario(int id)
         {
             InitializeComponent();
         }

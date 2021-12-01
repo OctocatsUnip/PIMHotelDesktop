@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PIM.Desktop.MVVM.View"
         mc:Ignorable="d"
-        Title="CadastroReserva" Height="550" Width="800"
+        Title="CadastroReserva" Height="650" Width="800"
         Background="#2C3333">
 
     <Grid
             Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="220"/>
+            <RowDefinition Height="280"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -35,18 +35,21 @@
                 Grid.Column="0"
                 Grid.Row="1"
                 Margin="5">
-
+            <TextBox 
+                    x:Name="txtId"
+                    Background="Transparent"
+                    Foreground="AliceBlue" 
+                    Visibility="Hidden"
+                />
             <Label
                     HorizontalAlignment="Left"
                     Foreground="#fff"
                     Content="Cliente: "
                 />
-
             <TextBox 
                     x:Name="txtNome"
                     Background="Transparent"
-                    Foreground="AliceBlue" 
-                   
+                    Foreground="AliceBlue"       
                 />
 
             <Label
@@ -195,7 +198,24 @@
                 TextWrapping="Wrap"
                 Text="{Binding ElementName=listBoxQuartos, Path=SelectedItem}"
                 Background="Transparent"
-                Foreground="AliceBlue"/>
+                Foreground="AliceBlue"
+                Margin="5"/>
+            <Button
+                Name="btnSelecionarQuarto"
+                HorizontalAlignment="Left"
+                FontSize="14"
+                Content="Selecionar Quarto" 
+                Click="btnSelecionarQuarto_Click"
+                Margin="5"
+                />
+            <!--<TextBox 
+                Name="txtValorQuarto"
+                Text="{Binding ElementName=listBoxQuartos, Path=SelectedItem.Valor_quarto}"
+                Margin="5"
+                Visibility="Hidden"/>-->
+                
+
+
         </StackPanel>
 
 
@@ -203,19 +223,22 @@
                 Grid.Row="1"
                  Grid.Column="2"
                  Margin="5">
-            <Button
+            <Button x:Name="btnCarregarBeneficios"
+                Grid.Row="4"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
                 FontSize="14"
-                Content="Carregar Beneficios" Click="Button_Click_1"
-                />
+                Margin="5"
+                Content="Carregar Beneficios"
+                Click="btnCarregarBeneficios_Click"
+            />
+
 
             <ListBox Name="listBoxBeneficios"
                  Background="#2C3333"
                  Foreground="White"
-                 VerticalAlignment="Top"
-                         Height="150"
-                         Margin="5">
+                 Height="180"
+                 Margin="5">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -227,9 +250,20 @@
                                 <ColumnDefinition Width="100"/>
                                 <ColumnDefinition Width="100"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Path=nome_beneficio}" FontSize="14" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-                            <TextBlock Text="{Binding Path=valor_beneficio, StringFormat='R$ {0}'}" FontSize="12" Grid.Row="1"/>
-                            <TextBlock Text="{Binding Path=id}" FontSize="12" Grid.Row="1" Grid.Column="1"/>
+                            <TextBlock Text="{Binding Path=nome_beneficio}" 
+                                           FontSize="14" 
+                                           Grid.Row="0" 
+                                           Grid.Column="0" 
+                                           Grid.ColumnSpan="2"/>
+                            <TextBlock 
+                                Name="txtValorBeneficio"
+                                Text="{Binding Path=valor_beneficio, 
+                                StringFormat='R$ {0}'}" 
+                                FontSize="12" Grid.Row="1"/>
+                                <TextBlock Text="{Binding Path=id}" 
+                                       FontSize="12" 
+                                       Grid.Row="1" 
+                                       Grid.Column="1"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -240,37 +274,54 @@
                 Text="{Binding ElementName=listBoxBeneficios, Path=SelectedItem}"
                 Background="Transparent"
                 Foreground="AliceBlue"/>
+            <Button
+                x:Name="btnInserirBeneficio"
+                Content="Adicionar Beneficio"
+                HorizontalAlignment="Right"
+                Margin="5"
+                Height="25" Click="btnInserirBeneficio_Click"
+            />
         </StackPanel>
 
 
         <StackPanel
                 Grid.Column="2"
-                Grid.Row="2"
+                Grid.Row="2">
+            <Label
                 HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                >
+                Foreground="#fff"
+                VerticalAlignment="Center"
+                Content="Beneficios"
+             />
+            
+            <ListBox Name="lbBeneficiosQuarto"
+                    Grid.Row="5"
+                    Background="#2C3333"
+                    Foreground="White"
+                     Height="150">
+            </ListBox>
             <Label
                 Foreground="#fff"
                 Content="Valor: "
+                HorizontalAlignment="Left"
                 />
 
             <TextBox 
                 Name="txtValor"
                 Width="100"
                 Text=""
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
                 Background="Transparent"
-                Foreground="AliceBlue"
-                    
+                Foreground="AliceBlue" 
+                HorizontalAlignment="Left"
+                Margin="5 0"
                 />
         </StackPanel>
         <Grid
                 Grid.Column="2"
                 Grid.Row="2"
-                HorizontalAlignment="Center"
+                HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
-                Margin="20"
+                Margin="5"
                 >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -280,14 +331,13 @@
             <Button
                 Height="30" Width="60"
                 Content="Cancelar"
-                Margin="20"
-                    HorizontalAlignment="Center"
+                Margin="10"
                 />
             <Button
                 Grid.Column="1"
                 Height="30" Width="60"
                 Content="Reservar"
-                Margin="20"
+                Margin="10"
                 HorizontalAlignment="Center"
                 />
         </Grid>

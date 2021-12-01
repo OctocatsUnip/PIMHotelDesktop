@@ -129,40 +129,7 @@
         </StackPanel>
         <StackPanel
             Grid.Row="5">
-        <Button x:Name="btnCarregarBeneficios"
-                Grid.Row="4"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                FontSize="14"
-                Margin="5"
-                Content="Carregar Beneficios"
-                Click="btnCarregarBeneficios_Click"
-            />
-
-
-        <ListBox Name="listBoxBeneficios"
-                 Background="#2C3333"
-                 Foreground="White"
-                 Height="180"
-                 Margin="5">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="100"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding Path=nome_beneficio}" FontSize="14" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-                        <TextBlock Text="{Binding Path=valor_beneficio, StringFormat='R$ {0}'}" FontSize="12" Grid.Row="1"/>
-                        <TextBlock Text="{Binding Path=id}" FontSize="12" Grid.Row="1" Grid.Column="1"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        
         </StackPanel>
         <!--<Label
             Grid.Row="4"
@@ -199,32 +166,7 @@
             Grid.Column="1"
             Grid.Row="5">
             
-            <Label
-                HorizontalAlignment="Center"
-                Foreground="#fff"
-                VerticalAlignment="Center"
-                Content="Adicionar Beneficio"
-             />
-            <TextBox
-                Name="txtBeneficioSelecionado"
-                Background="Transparent"
-                Foreground="White"
-                Margin="5 0 5 0"
-                Text="{Binding ElementName=listBoxBeneficios, Path=SelectedItem}"
-            />
-            <Button
-                Content="Adicionar Beneficio"
-                HorizontalAlignment="Right"
-                Margin="5"
-                Height="25" Click="Button_Click"
-            />
-            <ListBox Name="lbBeneficiosQuarto"
-                    Grid.Row="5"
-                    Background="#2C3333"
-                    Foreground="White"
-                     Height="150"
-                     Margin="5">
-            </ListBox>
+            
         </StackPanel>
 
         <Label

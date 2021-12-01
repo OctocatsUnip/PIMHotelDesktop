@@ -33,18 +33,18 @@ namespace PIM.Desktop.MVVM.View
             InitializeComponent();
         }
 
-        private void GetBeneficios()
-        {
-            var response = client.GetStringAsync(Url + "beneficio").Result;
-            var beneficio = JsonConvert.DeserializeObject<List<BeneficiosModel>>(response);
+        //private void GetBeneficios()
+        //{
+        //    var response = client.GetStringAsync(Url + "beneficio").Result;
+        //    var beneficio = JsonConvert.DeserializeObject<List<BeneficiosModel>>(response);
 
-            listBoxBeneficios.ItemsSource = beneficio;
+        //    listBoxBeneficios.ItemsSource = beneficio;
 
-        }
-        private void btnCarregarBeneficios_Click(object sender, RoutedEventArgs e)
-        {
-            this.GetBeneficios();
-        }
+        //}
+        //private void btnCarregarBeneficios_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.GetBeneficios();
+        //}
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
@@ -59,12 +59,12 @@ namespace PIM.Desktop.MVVM.View
             return pessoas;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            {
-                lbBeneficiosQuarto.Items.Add(txtBeneficioSelecionado.Text);
-            }
-        }
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    {
+        //        lbBeneficiosQuarto.Items.Add(txtBeneficioSelecionado.Text);
+        //    }
+        //}
 
         private void GetStatus()
         {

@@ -44,15 +44,15 @@ namespace PIM.Desktop.MVVM.View
 
         private void btnBuscarPessoa_Click(object sender, RoutedEventArgs e)
         {
-            var pessoa = this.GetPessoaCpf(txtCPF.Text);
-            txtNome.Text = pessoa.nome_pessoa;
+                var pessoas = this.GetPessoaCpf(txtCPF.Text);
+                txtNome.Text = pessoas.nome;
         }
         private PessoaModel GetPessoaCpf(string cpf)
         {
-            var response = client.GetStringAsync(Url + "pessoa/" + cpf).Result;
-            var pessoa = JsonConvert.DeserializeObject<PessoaModel>(response);
+            var response = client.GetStringAsync(Url + "pessoas/" + cpf).Result;
+            var pessoas = JsonConvert.DeserializeObject<PessoaModel>(response);
 
-            return pessoa;
+            return pessoas;
         }
 
 
@@ -66,7 +66,7 @@ namespace PIM.Desktop.MVVM.View
 
         private void GetQuartoBanheiro(int Quantia_banheiros, int Quantia_Camas)
         {
-            var response = client.GetStringAsync(Url + "quarto/" + Quantia_banheiros + "," + Quantia_Camas).Result;
+            var response = client.GetStringAsync(Url + "quartos/" + Quantia_banheiros + "," + Quantia_Camas).Result;
             var banheiro = JsonConvert.DeserializeObject<List<QuartosModel>>(response);
             listBoxQuartos.ItemsSource = banheiro;
         }
@@ -82,7 +82,7 @@ namespace PIM.Desktop.MVVM.View
 
         private void GetBeneficios()
         {
-            var response = client.GetStringAsync(Url + "beneficios").Result;
+            var response = client.GetStringAsync(Url + "beneficio").Result;
             var beneficios = JsonConvert.DeserializeObject<List<BeneficiosModel>>(response);
 
             listBoxBeneficios.ItemsSource = beneficios;

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PIM.Desktop.MVVM.View"
         mc:Ignorable="d"
-        Title="DescricaoReserva" Height="500" Width="800"
+        Title="DescricaoReserva" Height="580" Width="800"
         Background="#2C3333">
     <Grid>
 
@@ -20,7 +20,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="180"/>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="150"/>
+            <RowDefinition/>
 
         </Grid.RowDefinitions>
 
@@ -44,7 +44,7 @@
         />
         <ListBox Name="listBoxHospedes"
                  Grid.Row="3"
-                 Margin="5 0 0 0"
+                 Margin="5"
                  Background="#2C3333"
                  Foreground="White">
             <ListBox.ItemTemplate>
@@ -90,21 +90,7 @@
                 Background="Transparent"
                 Foreground="White"
                 Margin="5 0 5 0"
-            />
-
-            <Label
-                Grid.Column="1"
-                Grid.Row="2"
-                HorizontalAlignment="Left"
-                Foreground="#fff"
-                Content="Telefone"
-             />
-            <TextBox
-                Grid.Column="2"
-                Grid.Row="2"
-                Background="Transparent"
-                Foreground="White"
-                Margin="5 0 5 0"
+                Name="txtNome"
             />
 
             <Label
@@ -113,7 +99,7 @@
                 HorizontalAlignment="Left"
                 Foreground="#fff"
                 VerticalAlignment="Center"
-                Content="Status"
+                Content="CPF: "
              />
             <TextBox
                 Grid.Column="2"
@@ -121,19 +107,64 @@
                 Background="Transparent"
                 Foreground="White"
                 Margin="5 0 5 0"
+                Name="txtCPF"
             />
+            <Grid>
+                
             <Button
             Grid.Column="1"
             Grid.Row="4"
             Content="Adicionar Hospede"
             HorizontalAlignment="Left"
-                Margin="0 5 5 0"
+                Margin="5 5"
             Height="25"
             />
+            <Button x:Name="btnBuscar"
+                Content="Buscar Pessoa"
+                HorizontalAlignment="Right"
+                Margin="5 5"
+                Height="25" Click="btnBuscar_Click"
+            />
+            </Grid>
         </StackPanel>
+        <StackPanel
+            Grid.Row="5">
+        <Button x:Name="btnCarregarBeneficios"
+                Grid.Row="4"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="14"
+                Margin="5"
+                Content="Carregar Beneficios"
+                Click="btnCarregarBeneficios_Click"
+            />
 
 
-        <Label
+        <ListBox Name="listBoxBeneficios"
+                 Background="#2C3333"
+                 Foreground="White"
+                 Height="180"
+                 Margin="5">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Path=nome_beneficio}" FontSize="14" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="{Binding Path=valor_beneficio, StringFormat='R$ {0}'}" FontSize="12" Grid.Row="1"/>
+                        <TextBlock Text="{Binding Path=id}" FontSize="12" Grid.Row="1" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        </StackPanel>
+        <!--<Label
             Grid.Row="4"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
@@ -162,12 +193,12 @@
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-        </ListBox>
+        </ListBox>-->
 
         <StackPanel
             Grid.Column="1"
-            Grid.Row="5"
-            VerticalAlignment="Bottom">
+            Grid.Row="5">
+            
             <Label
                 HorizontalAlignment="Center"
                 Foreground="#fff"
@@ -175,16 +206,25 @@
                 Content="Adicionar Beneficio"
              />
             <TextBox
+                Name="txtBeneficioSelecionado"
                 Background="Transparent"
                 Foreground="White"
                 Margin="5 0 5 0"
+                Text="{Binding ElementName=listBoxBeneficios, Path=SelectedItem}"
             />
             <Button
-            Content="Adicionar Beneficio"
-            HorizontalAlignment="Left"
-                Margin="0 5 5 0"
-            Height="25"
+                Content="Adicionar Beneficio"
+                HorizontalAlignment="Right"
+                Margin="5"
+                Height="25" Click="Button_Click"
             />
+            <ListBox Name="lbBeneficiosQuarto"
+                    Grid.Row="5"
+                    Background="#2C3333"
+                    Foreground="White"
+                     Height="150"
+                     Margin="5">
+            </ListBox>
         </StackPanel>
 
         <Label
@@ -201,6 +241,7 @@
             Background="Transparent"
             Foreground="White"
             Margin="0 0 5 0"
+            Name="txtNomeQuarto"
         />
 
         <Grid
@@ -215,6 +256,7 @@
                 <DatePicker
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Name="DataEntrada"
                  />
             </StackPanel>
 
@@ -228,6 +270,7 @@
                 <DatePicker
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    Name="DataSaida"
                 />
             </StackPanel>
 
@@ -239,13 +282,19 @@
                 />
 
                 <ComboBox
-                HorizontalAlignment="Left"
-                VerticalAlignment="Bottom">
-
-                    <ComboBoxItem IsSelected="True">Ocupado</ComboBoxItem>
-                    <ComboBoxItem>Limpando</ComboBoxItem>
-                    <ComboBoxItem>Manutenção</ComboBoxItem>
-                    <ComboBoxItem>Fechado</ComboBoxItem>
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Name="cbStatus"
+                    ItemsSource="{Binding}"
+                    >
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding nome_status}"/>
+                                <TextBlock Text="{Binding id}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
                 </ComboBox>
             </StackPanel>
         </Grid>
@@ -265,6 +314,7 @@
             Margin="0 0 5 0"
             Text="R$ "
             VerticalAlignment="Center"
+            Name="txtValorTotal"
         />
         <Grid
             Grid.Column="2"

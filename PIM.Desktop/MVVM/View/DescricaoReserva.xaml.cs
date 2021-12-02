@@ -30,48 +30,23 @@ namespace PIM.Desktop.MVVM.View
             client.DefaultRequestHeaders.Accept.Add(
             new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json")
                 );
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
-        //private void GetBeneficios()
-        //{
-        //    var response = client.GetStringAsync(Url + "beneficio").Result;
-        //    var beneficio = JsonConvert.DeserializeObject<List<BeneficiosModel>>(response);
-
-        //    listBoxBeneficios.ItemsSource = beneficio;
-
-        //}
-        //private void btnCarregarBeneficios_Click(object sender, RoutedEventArgs e)
-        //{
-        //    this.GetBeneficios();
-        //}
-
-        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        private void GetReserva()
         {
-            var pessoas = this.GetPessoaCpf(txtCPF.Text);
-            txtNome.Text = pessoas.nome;
-        }
-        private PessoaModel GetPessoaCpf(string cpf)
-        {
-            var response = client.GetStringAsync(Url + "pessoas/" + cpf).Result;
-            var pessoas = JsonConvert.DeserializeObject<PessoaModel>(response);
+            var response = client.GetStringAsync(Url + "reservas").Result;
+            var reserva = JsonConvert.DeserializeObject<List<ReservaModel>>(response);
+            listBoxQuartos.ItemsSource = reserva;
+            listBoxHospedes.ItemsSource = reserva;
 
-            return pessoas;
         }
 
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    {
-        //        lbBeneficiosQuarto.Items.Add(txtBeneficioSelecionado.Text);
-        //    }
-        //}
-
-        private void GetStatus()
+        private void btnFechar_Click(object sender, RoutedEventArgs e)
         {
-            var response = client.GetStringAsync(Url + "status").Result;
-            var status = JsonConvert.DeserializeObject<List<StatusModel>>(response);
-            //cbStatus.ItemsSource = status;
-
+            PaineldeReservas telaReservas = new PaineldeReservas();
+            telaReservas.Show();
+            this.Close();
         }
     }
 }

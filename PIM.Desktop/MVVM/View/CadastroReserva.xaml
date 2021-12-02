@@ -9,7 +9,7 @@
         Background="#2C3333">
 
     <Grid
-            Margin="5">
+         Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="280"/>
@@ -19,7 +19,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
 
         <Label
@@ -73,17 +73,11 @@
                 />
                 <Button
                         Name="btnInserir"
-                        Content="Inserir"
+                        Content="Escolher Hospede"
                         Margin="5"
                         Width="50" Click="btnInserir_Click"
                         />
             </StackPanel>
-            <Button
-                    x:Name="btnCarregar"
-                    Content="Criar Hospede" 
-                    Margin="5 60 0 5 "
-                    VerticalAlignment="Bottom"
-                    Click="btnCriar_Click"/>
         </StackPanel>
 
         <StackPanel
@@ -138,7 +132,9 @@
                     VerticalAlignment="Center"
                     Content="Quantidade de Camas:"
                 />
-            <TextBox Name="txtCamas"/>
+            <TextBox Name="txtCamas"
+                     Background="Transparent"
+                    Foreground="AliceBlue" />
 
             <Label
                     HorizontalAlignment="Center"
@@ -146,7 +142,9 @@
                     VerticalAlignment="Center"
                     Content="Quantidade de Banheiros:"
                 />
-            <TextBox Name="txtBanheiro"/>
+            <TextBox Name="txtBanheiro"
+                     Background="Transparent"
+                    Foreground="AliceBlue" />
         </StackPanel>
         <StackPanel
                 Grid.Row="2"
@@ -200,6 +198,10 @@
                 Background="Transparent"
                 Foreground="AliceBlue"
                 Margin="5"/>
+            <TextBox 
+                Name="txtQuartoId"
+                Text="{Binding ElementName=listBoxQuartos, Path=SelectedItem.id}"
+                Visibility="Hidden"/>
             <Button
                 Name="btnSelecionarQuarto"
                 HorizontalAlignment="Left"
@@ -208,118 +210,23 @@
                 Click="btnSelecionarQuarto_Click"
                 Margin="5"
                 />
-            <!--<TextBox 
+            <TextBox 
                 Name="txtValorQuarto"
                 Text="{Binding ElementName=listBoxQuartos, Path=SelectedItem.Valor_quarto}"
                 Margin="5"
-                Visibility="Hidden"/>-->
-                
-
-
-        </StackPanel>
-
-
-        <StackPanel
-                Grid.Row="1"
-                 Grid.Column="2"
-                 Margin="5">
-            <Button x:Name="btnCarregarBeneficios"
-                Grid.Row="4"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                FontSize="14"
-                Margin="5"
-                Content="Carregar Beneficios"
-                Click="btnCarregarBeneficios_Click"
-            />
-
-
-            <ListBox Name="listBoxBeneficios"
-                 Background="#2C3333"
-                 Foreground="White"
-                 Height="180"
-                 Margin="5">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="100"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Path=nome_beneficio}" 
-                                           FontSize="14" 
-                                           Grid.Row="0" 
-                                           Grid.Column="0" 
-                                           Grid.ColumnSpan="2"/>
-                            <TextBlock 
-                                Name="txtValorBeneficio"
-                                Text="{Binding Path=valor_beneficio, 
-                                StringFormat='R$ {0}'}" 
-                                FontSize="12" Grid.Row="1"/>
-                                <TextBlock Text="{Binding Path=id}" 
-                                       FontSize="12" 
-                                       Grid.Row="1" 
-                                       Grid.Column="1"/>
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                Visibility="Hidden"/>
             <TextBox 
-                Name="txtBeneficioSelecionado"
-                TextWrapping="Wrap"
-                Text="{Binding ElementName=listBoxBeneficios, Path=SelectedItem}"
-                Background="Transparent"
-                Foreground="AliceBlue"/>
-            <Button
-                x:Name="btnInserirBeneficio"
-                Content="Adicionar Beneficio"
-                HorizontalAlignment="Right"
+                Name="txtValorBeneficios"
+                Text="{Binding ElementName=listBoxBeneficios, Path=SelectedItem.valor_beneficios}"
                 Margin="5"
-                Height="25" Click="btnInserirBeneficio_Click"
-            />
+                Visibility="Hidden"/>
+
         </StackPanel>
-
-
-        <StackPanel
-                Grid.Column="2"
-                Grid.Row="2">
-            <Label
-                HorizontalAlignment="Center"
-                Foreground="#fff"
-                VerticalAlignment="Center"
-                Content="Beneficios"
-             />
-            
-            <ListBox Name="lbBeneficiosQuarto"
-                    Grid.Row="5"
-                    Background="#2C3333"
-                    Foreground="White"
-                     Height="150">
-            </ListBox>
-            <Label
-                Foreground="#fff"
-                Content="Valor: "
-                HorizontalAlignment="Left"
-                />
-
-            <TextBox 
-                Name="txtValor"
-                Width="100"
-                Text=""
-                Background="Transparent"
-                Foreground="AliceBlue" 
-                HorizontalAlignment="Left"
-                Margin="5 0"
-                />
-        </StackPanel>
+       
         <Grid
                 Grid.Column="2"
                 Grid.Row="2"
-                HorizontalAlignment="Right"
+                HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
                 Margin="5"
                 >
@@ -327,18 +234,19 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
             <Button
                 Height="30" Width="60"
                 Content="Cancelar"
-                Margin="10"
+                Margin="10" Click="btnCancelar_Click_1"
                 />
             <Button
-                Grid.Column="1"
+                Grid.Column="2"
                 Height="30" Width="60"
                 Content="Reservar"
                 Margin="10"
-                HorizontalAlignment="Center"
+                HorizontalAlignment="Center" 
+                Name="btnSalvar"
+                Click="btnSalvar_Click_2"
                 />
         </Grid>
     </Grid>

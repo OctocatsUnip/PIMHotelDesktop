@@ -64,6 +64,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MVVM\Model\BeneficiosModel.cs" />
+    <Compile Include="MVVM\Model\HospedesModel.cs" />
     <Compile Include="MVVM\Model\PessoaModel.cs" />
     <Compile Include="MVVM\Model\ReservaModel.cs" />
     <Compile Include="MVVM\Model\StatusModel.cs" />
@@ -233,42 +234,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\images\sair.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="MVVM\View\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="MVVM\View\chat.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="MVVM\View\sino.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="MVVM\View\sair.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Hall.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="chat.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="MVVM\View\quarto_teste.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="MVVM\View\x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="MVVM\View\check.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="MVVM\View\pia.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="MVVM\View\Hall.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="MVVM\View\Vista.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

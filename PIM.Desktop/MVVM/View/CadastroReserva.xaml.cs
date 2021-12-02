@@ -14,6 +14,7 @@ using PIM.Desktop.MVVM.Model;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Collections;
+using System.Globalization;
 
 namespace PIM.Desktop.MVVM.View
 {
@@ -24,8 +25,9 @@ namespace PIM.Desktop.MVVM.View
     {
         private string Url = "http://localhost:5000/";
         HttpClient client = new HttpClient();
-        ArrayList ids = new ArrayList();
-        
+        private string formatted;
+        private string formattedSaida;
+
 
         public CadastroReserva()
         {
@@ -35,7 +37,7 @@ namespace PIM.Desktop.MVVM.View
             new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json")
                 );
             InitializeComponent();
-            
+
         }
 
         private void btnCriar_Click(object sender, RoutedEventArgs e)
@@ -61,11 +63,12 @@ namespace PIM.Desktop.MVVM.View
 
         private void btnInserir_Click(object sender, RoutedEventArgs e)
         {
-            listBoxHospedes.Items.Add(txtId.Text+ " "+ txtNome.Text + " - " + txtCPF.Text);
-            ids.Add(txtId);
+            listBoxHospedes.Items.Add(txtId.Text + " " + txtNome.Text + " - " + txtCPF.Text);
+            ReservaModel pessoa = new ReservaModel();
+            //pessoa.hospedes.Add(txtId.Text);
         }
 
-        
+
 
 
         private void GetQuartoBanheiro(int Quantia_banheiros, int Quantia_Camas)
@@ -82,32 +85,64 @@ namespace PIM.Desktop.MVVM.View
         }
         private void btnSelecionarQuarto_Click(object sender, RoutedEventArgs e)
         {
+            var valorQuarto = decimal.Parse(txtValorQuarto.Text, CultureInfo.InvariantCulture);
+
+            DateTime? selectedDate = dtSaida.SelectedDate;
+
+            if (selectedDate.HasValue)
+            {
+                formattedSaida = selectedDate.Value.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+            }
         }
 
-        private void GetBeneficios()
+
+
+        private void btnCancelar_Click_1(object sender, RoutedEventArgs e)
         {
-            var response = client.GetStringAsync(Url + "beneficio").Result;
-            var beneficios = JsonConvert.DeserializeObject<List<BeneficiosModel>>(response);
-
-            listBoxBeneficios.ItemsSource = beneficios;
-
+            PaineldeReservas telaCadastroReservas = new PaineldeReservas();
+            telaCadastroReservas.Show();
+            this.Close();
         }
-        private void btnCarregarBeneficios_Click(object sender, RoutedEventArgs e)
+
+        private void btnSalvar_Click_2(object sender, RoutedEventArgs e)
         {
-            this.GetBeneficios();
-        }
+            DateTime? selectedDate = dtEntrada.SelectedDate;
 
-        private void btnInserirBeneficio_Click(object sender, RoutedEventArgs e)
+            if (selectedDate.HasValue)
+            {
+                formatted = selectedDate.Value.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+            }
+
+
+            ReservaModel reservas = new ReservaModel()
+            {
+                data_inicio = Convert.ToDateTime(formatted),
+                data_checkout = Convert.ToDateTime(formattedSaida),
+                data_final = Convert.ToDateTime(formattedSaida),
+                valor_diarias = Convert.ToDecimal(txtValorQuarto.Text),
+                valores_beneficios = (20),
+                quarto_id = Convert.ToInt16(txtQuartoId.Text),
+                pessoa_id = Convert.ToInt16(4),
+            };
+
+            this.SaveReservas(reservas);
+
+            PaineldeReservas telaCadastroReservas = new PaineldeReservas();
+            telaCadastroReservas.Show();
+            this.Close();
+        }
+        private void SaveReservas(ReservaModel reservas)
         {
-            lbBeneficiosQuarto.Items.Add(txtBeneficioSelecionado.Text);
-            ListBoxItem item = ((sender as ListBox).SelectedItem as ListBoxItem);
-            
-
+            client.PostAsJsonAsync(Url + "reservas", reservas);
         }
-
-        
     }
 }
+
+
+
+
+
+
 
 
 

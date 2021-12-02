@@ -13,12 +13,13 @@ namespace PIM.Desktop.MVVM.Model
         public DateTime Data_Nascimento { get; set; }
         public string Sexo { get; set; }
         public string Telefone { get; set; }
-        public int Tipo_Telefone { get; set; }
+        public string Celular { get; set; }
         public string Endereco { get; set; }
         public int Numero { get; set; }
         public string Bairro { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public int CEP { get; set; }
+        public List<TelefonesModel> Telefone_owner { get; set; }
     }
 }

@@ -69,6 +69,7 @@
     <Compile Include="MVVM\Model\PessoaModel.cs" />
     <Compile Include="MVVM\Model\ReservaModel.cs" />
     <Compile Include="MVVM\Model\StatusModel.cs" />
+    <Compile Include="MVVM\Model\TelefonesModel.cs" />
     <Compile Include="MVVM\View\InfoQuarto.xaml.cs">
       <DependentUpon>InfoQuarto.xaml</DependentUpon>
     </Compile>

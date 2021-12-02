@@ -123,6 +123,7 @@
             Grid.Row="7"
             Background="Transparent"
             Foreground="White"
+            x:Name="txtSexo"
         />
 
         <!-- Telefone -->
@@ -202,16 +203,32 @@
             x:Name="txtBairro"
         />
 
-        <!-- CEP -->
+        <!-- Cidade -->
         <Label
             Grid.Column="3"
             Grid.Row="10"
             VerticalAlignment="Bottom"
             Foreground="White"
-        >CEP:</Label>
+        >Cidade:</Label>
         <TextBox
             Grid.Column="3"
             Grid.Row="11"
+            Grid.ColumnSpan="3"
+            Background="Transparent"
+            Foreground="White"
+            x:Name="txtCidade"
+        />
+
+        <!-- CEP -->
+        <Label
+            Grid.Column="3"
+            Grid.Row="12"
+            VerticalAlignment="Bottom"
+            Foreground="White" Margin="0,0,0,24" Grid.RowSpan="2"
+        >CEP:</Label>
+        <TextBox
+            Grid.Column="3"
+            Grid.Row="13"
             Background="Transparent"
             Foreground="White"
             x:Name="txtCep"

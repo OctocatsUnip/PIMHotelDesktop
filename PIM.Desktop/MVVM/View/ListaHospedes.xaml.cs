@@ -26,13 +26,6 @@ namespace PIM.Desktop
         public ListaHospedes()
         {
             InitializeComponent();
-
-            List<User> users = new List<User>();
-            users.Add(new User() { Name = "John Doe", Birthday = new DateTime(1971, 7, 23) });
-            users.Add(new User() {Name = "Jane Doe", Birthday = new DateTime(1974, 1, 17) });
-            users.Add(new User() { Name = "Sammy Doe", Birthday = new DateTime(1991, 9, 2) });
-
-            ToDo.ItemsSource = users;
         }
         public class User
         {
@@ -40,15 +33,29 @@ namespace PIM.Desktop
 
             public string Name { get; set; }
 
-            public DateTime Birthday { get; set; }
+            public string CPF{ get; set; }
+            public int Numero { get; set; }
         }
 
-        private void btnPesquisar_Click(object sender, RoutedEventArgs e)
+        private void FiltrarDados(ListaHospedesModel filtro)
         {
-            //var response = client.GetStringAsync(Url + "pessoas/" + cpf).Result;
-            //var pessoas = JsonConvert.DeserializeObject<PessoaModel>(response);
+            var response = client.GetStringAsync(Url + "dados_pessoas/" + filtro.CPF).Result;
+            var pessoas = JsonConvert.DeserializeObject<ListaHospedesModel>(response);
 
-            //this.SaveUsuario(usuarioFuncionario);
+            List<User> users = new List<User>();
+            users.Add(new User() { Name = pessoas.Nome, CPF = pessoas.CPF, Numero = pessoas.Telefone_owner[0].numero });
+
+            ToDo.ItemsSource = users;
+        }
+
+        private void btnPesquisar_Click_1(object sender, RoutedEventArgs e)
+        {
+            ListaHospedesModel filtro = new ListaHospedesModel()
+            {
+                CPF = Convert.ToString(txtFiltro.Text),
+            };
+
+            this.FiltrarDados(filtro);
         }
     }
 }

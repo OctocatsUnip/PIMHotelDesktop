@@ -33,18 +33,17 @@ namespace PIM.Desktop
                 Nome = Convert.ToString(txtNome.Text),
                 RG = Convert.ToString(txtRg.Text),
                 CPF = Convert.ToString(txtCpf.Text),
-                //Data_Nascimento = Convert.ToString(txtDtNascimento.Text),
-                //Sexo = Convert.ToString(txt.Text),
+                Data_Nascimento = Convert.ToDateTime(txtDtNascimento.Text),
+                Sexo = Convert.ToString(txtSexo.Text),
                 Telefone = Convert.ToString(txtTelefone.Text),
-                //Tipo_Telefone = Convert.ToString(txt.Text),
+                Celular = Convert.ToString(txtCelular.Text),
                 Endereco = Convert.ToString(txtEndereco.Text),
-                //Numero = Convert.ToString(txtNumero.Text),
+                Numero = Convert.ToInt16(txtNumero.Text),
                 Bairro = Convert.ToString(txtBairro.Text),
-                //Cidade = Convert.ToString(txt.Text),
-                //Estado = Convert.ToString(txt.Text),
-                //CEP = Convert.ToString(txtCep.Text),
+                Cidade = Convert.ToString(txtCidade.Text),
+                Estado = Convert.ToString(txtEstado.Text),
+                CEP = Convert.ToInt16(txtCep.Text),
             };
-
         }
     }
 }

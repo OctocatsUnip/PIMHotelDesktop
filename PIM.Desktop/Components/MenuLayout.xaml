@@ -13,7 +13,7 @@
 
                 <StackPanel>
 
-                    <RadioButton Content="Home"
+                    <!--<RadioButton Content="Home"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
@@ -35,7 +35,7 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuItem}"/>
+                             Style="{StaticResource MenuItem}"/>-->
 
                 </StackPanel>
             </Grid>

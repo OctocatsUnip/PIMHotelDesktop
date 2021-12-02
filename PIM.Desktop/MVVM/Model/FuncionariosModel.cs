@@ -5,11 +5,11 @@ using System.Text;
 
 namespace PIM.Desktop.MVVM.Model
 {
-    class StatusModel
+    class FuncionariosModel
     {
         public int id { get; set; }
-        public string nome_status { get; set; }      
-        
-        public QuartosModel quartos { get; set; }
+        public decimal salario { get; set; }
+        public int pessoa_id { get; set; }
+
     }
 }

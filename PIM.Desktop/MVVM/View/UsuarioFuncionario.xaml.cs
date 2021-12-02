@@ -10,6 +10,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PIM.Desktop.MVVM.Model;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace PIM.Desktop
 {
@@ -18,9 +21,63 @@ namespace PIM.Desktop
     /// </summary>
     public partial class UsuarioFuncionario : Window
     {
+        private string Url = "http://localhost:5000/";
+        HttpClient client = new HttpClient();
+
         public UsuarioFuncionario()
         {
+            client.BaseAddress = new Uri(Url);
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json")
+                );
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UsuarioFuncionarioModel usuarioFuncionario = new UsuarioFuncionarioModel()
+            {
+                CPF = Convert.ToString(cpf.Text),
+                Usuario = Convert.ToString(user_name.Text),
+                Senha = Convert.ToString(password.Password)
+            };
+
+            this.SaveUsuario(usuarioFuncionario);
+        }
+        private void SaveUsuario(UsuarioFuncionarioModel usuarioFuncionario)
+        {
+            string cpf = usuarioFuncionario.CPF;
+            string usuario = usuarioFuncionario.Usuario;
+            string senha = usuarioFuncionario.Senha;
+
+            if (cpf == "" || usuario == "" || senha == "")
+            {
+                MessageBox.Show("Há campos que precisam ser preenchidos!");
+                return;
+            }
+
+            var response = client.GetStringAsync(Url + "pessoas/" + cpf).Result;
+            var pessoa = JsonConvert.DeserializeObject<PessoaModel>(response);
+
+            if (pessoa == null)
+            {
+                MessageBox.Show("Não há nenhuma pessoa vinculada a esse CPF");
+                return;
+            }
+
+            response = client.GetStringAsync(Url + "funcionario/" + pessoa.id).Result;
+            var funcionario = JsonConvert.DeserializeObject<FuncionariosModel>(response);
+
+            if (funcionario == null)
+            {
+                MessageBox.Show("Essa pessoa não é um funcionário");
+                return;
+            }
+
+            client.PostAsJsonAsync(Url + "user_sistema/" + funcionario.id, usuarioFuncionario);
+
+            MessageBox.Show("Usuário registrado com sucesso");
         }
     }
 }

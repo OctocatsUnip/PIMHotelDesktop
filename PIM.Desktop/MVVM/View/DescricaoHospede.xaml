@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PIM.Desktop"
         mc:Ignorable="d"
-        Title="DescricaoHospede" Height="450" Width="800">
+        Title="DescricaoHospede" Height="501.515" Width="833.333">
     <Grid Background="#2C3333">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -20,6 +20,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="25" MaxHeight="50"></RowDefinition>
             <RowDefinition Height="40" MaxHeight="45"></RowDefinition>
+            <RowDefinition Height="25" MaxHeight="35"></RowDefinition>
             <RowDefinition Height="25" MaxHeight="35"></RowDefinition>
             <RowDefinition Height="25" MaxHeight="35"></RowDefinition>
             <RowDefinition Height="25" MaxHeight="35"></RowDefinition>
@@ -62,6 +63,7 @@
             Grid.ColumnSpan="3"
             Background="Transparent"
             Foreground="White"
+            x:Name="txtNome"
         />
 
         <!-- Data de Nascimento -->
@@ -71,11 +73,12 @@
             VerticalAlignment="Bottom"
             Foreground="White"
         >Data de Nascimento:</Label>
-        <TextBox
+        <DatePicker
             Grid.Column="5"
             Grid.Row="3"
             Background="Transparent"
-            Foreground="White"
+            Foreground="Black"
+            x:Name="txtDtNascimento"
         />
 
         <!-- RG -->
@@ -90,6 +93,7 @@
             Grid.Row="5"
             Background="Transparent"
             Foreground="White"
+            x:Name="txtRg"
         />
 
         <!-- CPF -->
@@ -104,6 +108,7 @@
             Grid.Row="5"
             Background="Transparent"
             Foreground="White"
+            x:Name="txtCpf"
         />
 
         <!-- Email -->
@@ -112,27 +117,28 @@
             Grid.Row="6"
             VerticalAlignment="Bottom"
             Foreground="White"
-        >E-mail:</Label>
+        >Sexo:</Label>
         <TextBox
             Grid.Column="1"
             Grid.Row="7"
-            Grid.ColumnSpan="3"
             Background="Transparent"
             Foreground="White"
+            x:Name="txtSexo"
         />
 
         <!-- Telefone -->
         <Label
-            Grid.Column="1"
-            Grid.Row="8"
+            Grid.Column="3"
+            Grid.Row="6"
             VerticalAlignment="Bottom"
             Foreground="White"
         >Telefone:</Label>
         <TextBox
-            Grid.Column="1"
-            Grid.Row="9"
+            Grid.Column="3"
+            Grid.Row="7"
             Background="Transparent"
             Foreground="White"
+            x:Name="txtTelefone"
         />
 
         <!-- Celular -->
@@ -147,51 +153,70 @@
             Grid.Row="7"
             Background="Transparent"
             Foreground="White"
+            x:Name="txtCelular"
         />
 
         <!-- Endereço -->
         <Label
             Grid.Column="1"
-            Grid.Row="10"
+            Grid.Row="8"
             VerticalAlignment="Bottom"
             Foreground="White"
         >Endereço:</Label>
         <TextBox
             Grid.Column="1"
-            Grid.Row="11"
+            Grid.Row="9"
             Grid.ColumnSpan="3"
             Background="Transparent"
             Foreground="White"
+            x:Name="txtEndereco"
         />
 
         <!-- Numero -->
         <Label
             Grid.Column="5"
-            Grid.Row="10"
+            Grid.Row="8"
             VerticalAlignment="Bottom"
             Foreground="White"
         >N°:</Label>
         <TextBox
             Grid.Column="5"
-            Grid.Row="11"
+            Grid.Row="9"
             Margin="0 0 100 0"
             Background="Transparent"
             Foreground="White"
+            x:Name="txtNumero"
         />
 
         <!-- Bairro -->
         <Label
             Grid.Column="1"
-            Grid.Row="12"
+            Grid.Row="10"
             VerticalAlignment="Bottom"
             Foreground="White"
-            Grid.ColumnSpan="2"
         >Bairro:</Label>
         <TextBox
             Grid.Column="1"
-            Grid.Row="13"
+            Grid.Row="11"
             Background="Transparent"
             Foreground="White"
+            x:Name="txtBairro"
+        />
+
+        <!-- Cidade -->
+        <Label
+            Grid.Column="3"
+            Grid.Row="10"
+            VerticalAlignment="Bottom"
+            Foreground="White"
+        >Cidade:</Label>
+        <TextBox
+            Grid.Column="3"
+            Grid.Row="11"
+            Grid.ColumnSpan="3"
+            Background="Transparent"
+            Foreground="White"
+            x:Name="txtCidade"
         />
 
         <!-- CEP -->
@@ -199,42 +224,51 @@
             Grid.Column="3"
             Grid.Row="12"
             VerticalAlignment="Bottom"
-            Foreground="White"
-            Grid.ColumnSpan="2"
+            Foreground="White" Margin="0,0,0,24" Grid.RowSpan="2"
         >CEP:</Label>
         <TextBox
             Grid.Column="3"
             Grid.Row="13"
             Background="Transparent"
             Foreground="White"
+            x:Name="txtCep"
         />
 
         <!-- Pais -->
         <Label
             Grid.Column="5"
-            Grid.Row="12"
+            Grid.Row="10"
             VerticalAlignment="Bottom"
             Foreground="White"
-            Grid.ColumnSpan="2"
         >País:</Label>
         <TextBox
             Grid.Column="5"
+            Grid.Row="11"
+            Background="Transparent"
+            Foreground="White"
+            x:Name="txtPais"
+        />
+
+        <!-- Estado -->
+        <Label
+            Grid.Column="1"
+            Grid.Row="12"
+            VerticalAlignment="Bottom"
+            Foreground="White"
+        >Estado:</Label>
+        <TextBox
+            Grid.Column="1"
             Grid.Row="13"
             Background="Transparent"
             Foreground="White"
+            x:Name="txtEstado"
         />
-
-        <Button
-            Grid.Column="5"
-            Grid.Row="15"
-            Margin="50 0"
-        >Editar</Button>
 
         <Button
             Grid.Column="3"
             Grid.Row="15"
-            Margin="70 0"
-        >Excluir</Button>
+            Margin="50 0"
+        >Editar</Button>
 
     </Grid>
 </Window>

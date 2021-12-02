@@ -1,0 +1,138 @@
+﻿<Window x:Class="PIM.Desktop.MVVM.View.Quarto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PIM.Desktop.MVVM.View"
+        mc:Ignorable="d"
+        Title="Quarto" Height="751.547" Width="1168.041"
+        Background="#2C3333">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <!--<menu:MenuLayout/>-->
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!-- Barra Superior-->
+            <!--<Grid
+            Background="#D4D9D6"
+            Grid.Row="0"    
+        >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="217*"></ColumnDefinition>
+                    <ColumnDefinition Width="217*"></ColumnDefinition>
+                    <ColumnDefinition Width="217*"></ColumnDefinition>
+                    <ColumnDefinition Width="612*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBox
+                Margin="22 12 0 12"
+                VerticalContentAlignment="Center"
+                FontSize="14"
+            >Filtrar</TextBox>
+                <ComboBox
+                Grid.Column="1" 
+                Margin="22 12 0 12"
+            >
+                    <ComboBoxItem IsSelected="True" >Nenhum</ComboBoxItem>
+                    <ComboBoxItem>Reservado</ComboBoxItem>
+                    <ComboBoxItem>Em Andamento</ComboBoxItem>
+                    <ComboBoxItem>Finalizado</ComboBoxItem>
+                </ComboBox>
+
+                <Button
+                Name="btnPesquisar"
+                Content="Pesquisar"
+                Grid.Column="2"
+                Margin="22 12 22 12"
+             />
+            </Grid>-->
+
+            <!-- Main -->
+            <Grid Grid.Row="1">
+                <ListBox Name="listBoxQuartos"  
+                 Background="#2C3333"
+                 Foreground="White"
+                         Margin="5,10,5,176"
+                         Height="500">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="500"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="200"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Path=Nome_quarto, StringFormat='Nome: {0}'}"
+                                       FontSize="14" 
+                                       Grid.Column="0" />
+                                <TextBlock Text="{Binding Path=Quantia_camas, StringFormat='Camas: {0}'}" 
+                                       FontSize="12" 
+                                       Grid.Column="1"/>
+                                <TextBlock Text="{Binding Path=Valor_quarto, StringFormat='R$ {0}'}" 
+                                       FontSize="12" 
+                                       Grid.Column="2"/>
+                                <TextBlock Text="{Binding Path=nome_status, StringFormat='R$ {0}'}" 
+                                       FontSize="12" 
+                                       Grid.Column="3"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <Grid
+                Grid.Column="2"
+                Grid.Row="2"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="20"
+                >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button
+                Height="30" Width="60"
+                Content="Reservar"
+                Margin="10"
+                    HorizontalAlignment="Center"
+                />
+                    <Button
+                        Grid.Column="1"
+                Height="30" Width="60"
+                Content="Detalhes"
+                Margin="10"
+                    HorizontalAlignment="Center" Click="Button_Click"
+                />
+                    <!--<Button
+                Grid.Column="2"
+                Height="30" Width="120"
+                Content="Descrição reserva"
+                Margin="20"
+                HorizontalAlignment="Center"
+                />-->
+                </Grid>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

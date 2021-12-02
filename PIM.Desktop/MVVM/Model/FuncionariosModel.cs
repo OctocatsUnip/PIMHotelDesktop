@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace PIM.Desktop.MVVM.Model
 {
-    class FuncionariosModel
+    public class FuncionariosModel
     {
         public int id { get; set; }
         public decimal salario { get; set; }

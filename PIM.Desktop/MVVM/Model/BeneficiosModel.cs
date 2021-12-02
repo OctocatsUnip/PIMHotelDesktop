@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace PIM.Desktop.MVVM.Model
 {
-    class BeneficiosModel
+    public class BeneficiosModel
     {
         public int id { get; set; }
         public string nome_beneficio { get; set; }

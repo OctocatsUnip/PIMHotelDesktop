@@ -86,7 +86,7 @@
             <Label Grid.ColumnSpan="2" Content="+ Painel de Reservas" HorizontalAlignment="Left" Height="34" Margin="136,-3,0,0" VerticalAlignment="Top" Width="154" FontWeight="Bold" FontSize="14" Foreground="#FFF9F7F7"/>
         </Grid>
         <Grid Grid.Row="2"
-               Background="#2C3333" Margin="104,0,48,-100">
+               Background="#2C3333" Margin="154,0,48,-137">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="41*"/>
@@ -95,153 +95,156 @@
                 <ColumnDefinition Width="35*"/>
                 <ColumnDefinition Width="37*"/>
                 <ColumnDefinition Width="33*"/>
-                <ColumnDefinition Width="40"/>
-                <ColumnDefinition Width="33*"/>
-                <ColumnDefinition Width="37*"/>
-                <ColumnDefinition Width="32*"/>
-                <ColumnDefinition Width="37*"/>
-                <ColumnDefinition Width="41*"/>
-                <ColumnDefinition Width="39*"/>
-                <ColumnDefinition Width="26*"/>
-                <ColumnDefinition Width="39*"/>
-                <ColumnDefinition Width="39*"/>
-                <ColumnDefinition Width="35*"/>
-                <ColumnDefinition Width="39*"/>
-                <ColumnDefinition Width="39*"/>
-                <ColumnDefinition Width="43*"/>
+
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"></RowDefinition>
-                <RowDefinition Height="60"></RowDefinition>
-                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Border Grid.Row="2" Grid.Column="1"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Duplo" HorizontalAlignment="Left" Height="29" Margin="-1,9,0,0" VerticalAlignment="Top" Width="42" Foreground="#FFFFF7F7"/>
+            <Border Grid.Row="2" Grid.Column="1"  BorderBrush="Gray"  BorderThickness="1" />
+            <Border Grid.Row="3" Grid.Column="1"  BorderBrush="Gray"  BorderThickness="1" >
+                <ListBox Name="ListBozNomeQuarto"  
+                 Background="#2C3333"
+                 Foreground="White"
+                         Margin="0"
+                       >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Path=Nome_quarto, StringFormat='Nome: {0}'}"
+                                       FontSize="14" 
+                                       Grid.Row="3" 
+                                       Grid.Column="1" />
+
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </Border>
-            <Border Grid.Row="3" Grid.Column="1"  BorderBrush="Gray"  BorderThickness="1" />
             <Border Grid.Row="1" Grid.Column="1"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Tipo" HorizontalAlignment="Left" Height="30" Margin="-5,29,0,-1" VerticalAlignment="Top" Width="40" FontWeight="Bold" Foreground="#FFFBFBFB"/>
+                <Label Content="Nome Quarto" FontWeight="Bold" Foreground="White"/>
             </Border>
             <Border Grid.Row="3" Grid.Column="2"  BorderBrush="Gray"  BorderThickness="1" />
             <Border Grid.Row="2" Grid.Column="2"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="2" HorizontalAlignment="Left" Height="30" Margin="-1,19,0,0" VerticalAlignment="Top" Width="27" Foreground="#FFF9EEEE"/>
+                <ListBox Name="ListBoxHospede"  
+                 Background="#2C3333"
+                 Foreground="White"
+                         Margin="0"
+                         >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Path=Hospede, StringFormat='Nome: {0}'}"
+                                       FontSize="14" 
+                                       Grid.Row="2" 
+                                       Grid.Column="2" />
+
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+
             </Border>
-            <Border Grid.Row="1" Grid.Column="2"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="2" Grid.Column="3"  BorderBrush="Gray"  BorderThickness="1" >
-                <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="14" Margin="0,17,-246,0" Stroke="Black" VerticalAlignment="Top" Width="279"/>
+
+
+
+
+            <Border Grid.Row="1" Grid.Column="2"  BorderBrush="Gray"  BorderThickness="1" >
+                <Label Content="Hóspede" Foreground="White" FontWeight="Bold"/>
             </Border>
-            <Border Grid.Row="3" Grid.Column="3"  BorderBrush="Gray"  BorderThickness="1" />
+            <Border Grid.Row="2" Grid.Column="3"  BorderBrush="Gray"  BorderThickness="1" />
+            <Border Grid.Row="3" Grid.Column="3"  BorderBrush="Gray"  BorderThickness="1" >
+                <ListBox Name="ListBoxValor"  
+                 Background="#2C3333"
+                 Foreground="White"
+                         Margin="0"
+                         >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Path=Valor, StringFormat='Nome: {0}'}"
+                                       FontSize="14" 
+                                       Grid.Row="3" 
+                                       Grid.Column="3" />
+
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+            </Border>
             <Border Grid.Row="1" Grid.Column="3"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
+                <Label Content="Reservado" Foreground="White" FontWeight="Bold"/>
             </Border>
             <Border Grid.Row="2" Grid.Column="4"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="4"  BorderBrush="Gray"  BorderThickness="1" />
+            <Border Grid.Row="3" Grid.Column="4"  BorderBrush="Gray"  BorderThickness="1" >
+                <ListBox Name="ListBoxDataInicio"  
+                 Background="#2C3333"
+                 Foreground="White"
+                         Margin="0"
+                         >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+ 
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Path=DataInicio, StringFormat='Nome: {0}'}"
+                                       FontSize="14" 
+                                       Grid.Row="3" 
+                                       Grid.Column="4" />
+
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Border>
+
             <Border Grid.Row="1" Grid.Column="4"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
+                <Label Content="Data de Inicio" Foreground="White" FontWeight="Bold"/>
             </Border>
             <Border Grid.Row="2" Grid.Column="5"  BorderBrush="Gray"  BorderThickness="1" />
             <Border Grid.Row="3" Grid.Column="5"  BorderBrush="Gray"  BorderThickness="1" />
             <Border Grid.Row="1" Grid.Column="5"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
+                <Button Content="Check-in" Background="#FF727171" Foreground="White"/>
             </Border>
-            <Border Grid.Row="2" Grid.Column="6"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="6"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="6"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Right" Height="25" Margin="-1,9,14,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
-            </Border>
-            <Border Grid.Row="2" Grid.Column="7"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="7"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
-            </Border>
-            <Border Grid.Row="3" Grid.Column="7"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="2" Grid.Column="8"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="8"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="8"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
-            </Border>
-            <Border Grid.Row="2" Grid.Column="9"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="9"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="9"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
-            </Border>
-            <Border Grid.Row="2" Grid.Column="10"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="10"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="10"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
-            </Border>
-            <Border Grid.Row="2" Grid.Column="11"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="11"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="11"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="2" Grid.Column="12"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="12"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="12"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
-            </Border>
-            <Border Grid.Row="2" Grid.Column="13"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="13"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="13"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
-            </Border>
-            <Border Grid.Row="2" Grid.Column="14"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="14"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="14"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
-            </Border>
-            <Border Grid.Row="2" Grid.Column="15"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="15"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="15"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
-            </Border>
-            <Border Grid.Row="2" Grid.Column="16"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="16"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="16"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
-            </Border>
-            <Border Grid.Row="2" Grid.Column="17"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="17"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="17"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
-            </Border>
-            <Border Grid.Row="2" Grid.Column="18"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="18"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="18"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
-            </Border>
-            <Border Grid.Row="2" Grid.Column="19"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="3" Grid.Column="19"  BorderBrush="Gray"  BorderThickness="1" />
-            <Border Grid.Row="1" Grid.Column="19"  BorderBrush="Gray"  BorderThickness="1" >
-                <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="-1,9,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0"/>
-            </Border>
-            <Label Content="01/05/2021" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="2,19,0,0" VerticalAlignment="Top" Width="106" Foreground="#FFF3ECEC" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="3"/>
-            <Label Grid.ColumnSpan="4" Content=" 1 Mês" Grid.Column="6" HorizontalAlignment="Left" Height="29" Margin="0,21,0,0" VerticalAlignment="Top" Width="121" Foreground="#FFFBF6F6" FontWeight="Bold"/>
-            <Label Grid.ColumnSpan="3" Content="Status:" Grid.Column="13" HorizontalAlignment="Left" Height="24" Margin="3,21,0,0" VerticalAlignment="Top" Width="101" Foreground="White" FontWeight="Bold"/>
-            <Label Content="Cama" HorizontalAlignment="Left" Height="25" Margin="0,30,0,0" Grid.Row="2" VerticalAlignment="Top" Width="39" Foreground="#FFF5EEEE" Grid.Column="1"/>
-            <Label Content="01" Grid.Column="3" HorizontalAlignment="Left" Height="42" Margin="1,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="Q" HorizontalAlignment="Left" Height="25" Margin="0,10,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.106,0.154" Foreground="#FFF9F0F0" Grid.Column="11" Grid.Row="1"/>
-            <Label Content="01" Grid.Column="4" HorizontalAlignment="Left" Height="42" Margin="3,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="5" HorizontalAlignment="Left" Height="42" Margin="0,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="6" HorizontalAlignment="Left" Height="42" Margin="0,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="6" HorizontalAlignment="Left" Height="42" Margin="39,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-            <Label Content="01" Grid.Column="8" HorizontalAlignment="Left" Height="42" Margin="3,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="9" HorizontalAlignment="Left" Height="42" Margin="0,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="10" HorizontalAlignment="Left" Height="42" Margin="0,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="11" HorizontalAlignment="Left" Height="42" Margin="5,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="12" HorizontalAlignment="Left" Height="42" Margin="0,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="13" HorizontalAlignment="Left" Height="42" Margin="0,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="14" HorizontalAlignment="Left" Height="42" Margin="3,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="15" HorizontalAlignment="Left" Height="42" Margin="5,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="16" HorizontalAlignment="Left" Height="42" Margin="0,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="17" HorizontalAlignment="Left" Height="42" Margin="5,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="18" HorizontalAlignment="Left" Height="42" Margin="5,30,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
-            <Label Content="01" Grid.Column="19" HorizontalAlignment="Left" Height="42" Margin="5,30,0,0" Grid.Row="1" VerticalAlignment="Top" Width="24" Foreground="#FFF9F0F0" Grid.RowSpan="2"/>
+
         </Grid>
-        <Label Content="Qnd" HorizontalAlignment="Left" Height="35" Margin="187,89,0,0" Grid.Row="2" VerticalAlignment="Top" Width="37" Background="#00000000" Foreground="#FFF7F0F0" FontWeight="Bold"/>
-        <Label Content="Home" HorizontalAlignment="Left" Height="34" Margin="23,67,0,0" Grid.Row="2" VerticalAlignment="Top" Width="76" Foreground="#FFF3F2F2" FontWeight="Bold" FontSize="16"/>
-        <Label Content="Quartos" HorizontalAlignment="Left" Height="41" Margin="23,139,0,0" Grid.Row="2" VerticalAlignment="Top" Width="76" Foreground="#FFF7F4F4" FontWeight="Bold" FontSize="16"/>
-        <Label Content="Status Gerais" HorizontalAlignment="Left" Height="29" Margin="23,180,0,0" Grid.Row="2" VerticalAlignment="Top" Width="86" Foreground="#FFF5F0F0"/>
-        <Label Content="*Painel de Rservas" HorizontalAlignment="Left" Height="30" Margin="23,209,0,0" Grid.Row="2" VerticalAlignment="Top" Width="111" Foreground="#FFF3E7E7"/>
-        <Label Content="Painel de Status" HorizontalAlignment="Left" Height="26" Margin="23,244,0,0" Grid.Row="2" VerticalAlignment="Top" Width="111" Foreground="#FFFDF7F7"/>
-        <Label Content="Hóspedes" HorizontalAlignment="Left" Height="29" Margin="23,300,0,0" Grid.Row="2" VerticalAlignment="Top" Width="94" Foreground="#FFFDF4F4" FontSize="16" FontWeight="Bold"/>
     </Grid>
 </Window>

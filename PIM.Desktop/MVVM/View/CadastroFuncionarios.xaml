@@ -155,7 +155,7 @@
                         
             ></DatePicker>
             
-            <Label
+            <!--<Label
                 Grid.Column="3"
                 Grid.Row="7"
                 Foreground="#fff"
@@ -170,7 +170,7 @@
                 Background="Transparent"
                 Foreground="AliceBlue"
                 Padding="5, 3, 0, 0"
-                />
+                />-->
             
             <!--<Grid
                 Grid.Column="4"
@@ -199,6 +199,13 @@
                 Width="100" Click="btnSalvar_Click"
                 >
                 Próximo
+            </Button>
+            <Button x:Name="btn_funcionario"
+                Grid.Column="3"
+                Grid.Row="12"
+                Width="100" Click="btn_funcionario_Click"
+                >
+                Salvar
             </Button>
             
         </Grid>

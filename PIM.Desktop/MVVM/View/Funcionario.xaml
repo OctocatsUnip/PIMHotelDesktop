@@ -30,7 +30,7 @@
             <RowDefinition />
 
         </Grid.RowDefinitions>
-        <TextBlock
+        <!--<TextBlock
                 Foreground="#fff"
                 FontSize="16"
                 Grid.Column="1"
@@ -45,25 +45,42 @@
             Grid.Column="2"
             Grid.Row="1"
             Background="Transparent"
-            />
+            />-->
         <TextBlock
                 Foreground="#fff"
                 FontSize="16"
-                Grid.Column="4"
-                Grid.Row="1"
+                Grid.Column="1"
+                Grid.Row="3"
                 HorizontalAlignment="Right"
             Margin="0, 0, 10, 0"
             >
             Salário:
         </TextBlock>
         <TextBox x:Name="salario"
-            Grid.Column="5"
-            Grid.Row="1"
+            Grid.Column="2"
+            Grid.Row="3"
             Background="Transparent"
             Foreground="#fff"
             Padding="5, 3, 0, 0"
+            Grid.ColumnSpan="2"
             
-            >R$</TextBox>
+            ></TextBox>
+        <!--<TextBlock
+                Foreground="#fff"
+                FontSize="16"
+                Grid.Column="1"
+                Grid.Row="1"
+                HorizontalAlignment="Right"
+            Margin="0, 0, 10, 0"
+            
+            >
+            Hora de entrada:
+        </TextBlock>
+        <TextBox x:Name="hora_entrada"
+            Grid.Column="2"
+            Grid.Row="1"
+            Background="Transparent"
+            />
         <TextBlock
                 Foreground="#fff"
                 FontSize="16"
@@ -73,29 +90,13 @@
             Margin="0, 0, 10, 0"
             
             >
-            Hora de entrada:
-        </TextBlock>
-        <TextBox x:Name="hora_entrada"
-            Grid.Column="2"
-            Grid.Row="3"
-            Background="Transparent"
-            />
-        <TextBlock
-                Foreground="#fff"
-                FontSize="16"
-                Grid.Column="4"
-                Grid.Row="3"
-                HorizontalAlignment="Right"
-            Margin="0, 0, 10, 0"
-            
-            >
             Hora de saída:
         </TextBlock>
         <TextBox x:Name="hora_saida"
-            Grid.Column="5"
+            Grid.Column="2"
             Grid.Row="3"
             Background="Transparent"
-            />
+            />-->
         <Button x:Name="btnSalvar"
             Grid.Column="5"
             Grid.Row="5" Click="btnSalvar_Click"

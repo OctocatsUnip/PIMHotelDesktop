@@ -20,7 +20,7 @@ namespace PIM.Desktop.MVVM.View
     /// </summary>
     public partial class Beneficios : Window
     {
-        private string Url = "http://localhost:5000/beneficios";
+        private string Url = "http://localhost:5000/beneficio";
         HttpClient client = new HttpClient();
 
         public Beneficios()

@@ -205,7 +205,7 @@
                 Grid.Row="12"
                 Width="100" Click="btn_funcionario_Click"
                 >
-                Funcionário
+                Salvar
             </Button>
             
         </Grid>

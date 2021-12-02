@@ -84,6 +84,9 @@
     <Compile Include="MVVM\Model\PessoaModel.cs" />
     <Compile Include="MVVM\Model\ReservaModel.cs" />
     <Compile Include="MVVM\Model\StatusModel.cs" />
+    <Compile Include="MVVM\View\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\InfoQuarto.xaml.cs">
       <DependentUpon>InfoQuarto.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,10 @@
     <Page Include="Components\MenuLayout.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\InfoQuarto.xaml">
       <SubType>Designer</SubType>

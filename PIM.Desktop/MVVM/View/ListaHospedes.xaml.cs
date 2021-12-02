@@ -43,8 +43,8 @@ namespace PIM.Desktop
 
         private void btnPesquisar_Click(object sender, RoutedEventArgs e)
         {
-            var response = client.GetStringAsync(Url + "pessoas/" + cpf).Result;
-            var pessoas = JsonConvert.DeserializeObject<PessoaModel>(response);
+            //var response = client.GetStringAsync(Url + "pessoas/" + cpf).Result;
+            //var pessoas = JsonConvert.DeserializeObject<PessoaModel>(response);
 
             //this.SaveUsuario(usuarioFuncionario);
         }

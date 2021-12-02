@@ -12,6 +12,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PIM.Desktop.MVVM.Model;
 using System.Net.Http;
+using Newtonsoft.Json;
+using PIM.Desktop.MVVM.View;
+
 
 namespace PIM.Desktop
 {
@@ -44,7 +47,9 @@ namespace PIM.Desktop
         private void GetPessoas()
         {
             var response = client.GetStringAsync(Url).Result;
-            
+            var pessoas = JsonConvert.DeserializeObject<List<CadastroFuncionariosModel>>(response);
+
+            Console.WriteLine(pessoas);
         }
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
@@ -67,6 +72,12 @@ namespace PIM.Desktop
 
             };
             this.SaveCadastroFuncionario(funcionario);
+            this.GetPessoas();
+
+            //Funcionario telaFuncionario = new Funcionario();
+            //telaFuncionario.Show();
+            //this.Close();
+
         }
 
 

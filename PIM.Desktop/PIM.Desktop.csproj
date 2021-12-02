@@ -80,10 +80,13 @@
     </ApplicationDefinition>
     <Compile Include="MVVM\Model\BeneficiosModel.cs" />
     <Compile Include="MVVM\Model\FuncionariosModel.cs" />
+    <Compile Include="MVVM\Model\HospedeModel.cs" />
     <Compile Include="MVVM\Model\ListaHospedesModel .cs" />
     <Compile Include="MVVM\Model\PessoaModel.cs" />
+    <Compile Include="MVVM\Model\ReceberPessoa.cs" />
     <Compile Include="MVVM\Model\ReservaModel.cs" />
     <Compile Include="MVVM\Model\StatusModel.cs" />
+    <Compile Include="MVVM\Model\TelefonesModel.cs" />
     <Compile Include="MVVM\View\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>

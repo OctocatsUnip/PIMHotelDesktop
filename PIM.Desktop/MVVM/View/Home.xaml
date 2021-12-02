@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PIM.Desktop.MVVM.View"        
         mc:Ignorable="d"
-        Title="Home" Height="751.547" Width="1168.041"
+        Title="Home" Height="751.547" Width="1200.041"
         Background="#2C3333">
     <Grid>
         <Grid.RowDefinitions>
@@ -92,8 +92,8 @@
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="500"/>
-                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="400"/>
+                                    <ColumnDefinition Width="200"/>
                                     <ColumnDefinition Width="100"/>
                                     <ColumnDefinition Width="200"/>
                                 </Grid.ColumnDefinitions>
@@ -129,10 +129,10 @@
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="500"/>
-                                    <ColumnDefinition Width="100"/>
-                                    <ColumnDefinition Width="100"/>
-                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="350"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="150"/>
                                     <ColumnDefinition Width="100"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Text="{Binding Path=nome, StringFormat='Nome: {0}'}"

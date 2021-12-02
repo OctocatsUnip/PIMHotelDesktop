@@ -91,7 +91,6 @@
       <DependentUpon>InfoQuarto.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\Model\CadastroFuncionariosModel.cs" />
-    <Compile Include="MVVM\Model\BeneficiosModel.cs" />
     <Compile Include="MVVM\Model\CargosModel.cs" />
     <Compile Include="MVVM\Model\QuartosModel.cs" />
     <Compile Include="MVVM\Model\ServicosModel.cs" />

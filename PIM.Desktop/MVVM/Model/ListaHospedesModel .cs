@@ -7,6 +7,7 @@ namespace PIM.Desktop.MVVM.Model
 {
     class ListaHospedesModel
     {
+        public int ID{ get; set; }
         public string Nome { get; set; }
         public string RG { get; set; }
         public string CPF { get; set; }

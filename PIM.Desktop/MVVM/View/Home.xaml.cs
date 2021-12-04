@@ -33,12 +33,13 @@ namespace PIM.Desktop.MVVM.View
                 );
             InitializeComponent();
             GetQuartos();
+            GetPessoas();
         }
 
 
         private void GetQuartos()
         {
-            var response = client.GetStringAsync(Url + "quartos_status").Result;
+            var response = client.GetStringAsync(Url + "quartos").Result;
             var quartos = JsonConvert.DeserializeObject<List<QuartosModel>>(response);
 
             listBoxQuartos.ItemsSource = quartos;

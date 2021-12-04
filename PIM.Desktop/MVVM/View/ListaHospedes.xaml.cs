@@ -25,25 +25,68 @@ namespace PIM.Desktop
         HttpClient client = new HttpClient();
         public ListaHospedes()
         {
+            ListaHospedesModel dados = new ListaHospedesModel();
             InitializeComponent();
+            ListaTodos(dados);
         }
+
         public class User
         {
             public int Id { get; set; }
-
             public string Name { get; set; }
-
             public string CPF{ get; set; }
             public int Numero { get; set; }
         }
 
-        private void FiltrarDados(ListaHospedesModel filtro)
+        private void ListaTodos(ListaHospedesModel dados)
         {
-            var response = client.GetStringAsync(Url + "dados_pessoas/" + filtro.CPF).Result;
-            var pessoas = JsonConvert.DeserializeObject<ListaHospedesModel>(response);
+            var response = client.GetStringAsync(Url + "lista_dados_pessoas").Result;
+            var pessoas = JsonConvert.DeserializeObject<List<ListaHospedesModel>>(response);
 
             List<User> users = new List<User>();
-            users.Add(new User() { Name = pessoas.Nome, CPF = pessoas.CPF, Numero = pessoas.Telefone_owner[0].numero });
+
+            foreach (var line in pessoas)
+            {
+                try
+                {
+                    var numero = line.Telefone_owner[0].numero;
+                    users.Add(new User() { Id = line.ID, Name = line.Nome, CPF = line.CPF, Numero = numero });
+                }
+                catch
+                {
+                    var numero = 0;
+                    users.Add(new User() { Id = line.ID, Name = line.Nome, CPF = line.CPF, Numero = numero });
+                }
+            };
+
+            ToDo.ItemsSource = users;
+        }
+
+        private void FiltrarDados(ListaHospedesModel filtro)
+        {
+            if (filtro.CPF == "")
+            {
+                MessageBox.Show("O filtro não foi preenchido!!");
+                return;
+            }
+            var response = client.GetStringAsync(Url + "dados_pessoas/" + filtro.CPF).Result;
+            var pessoas = JsonConvert.DeserializeObject<List<ListaHospedesModel>>(response);
+
+            List<User> users = new List<User>();
+
+            foreach (var line in pessoas)
+            {
+                try 
+                {
+                    var numero = line.Telefone_owner[0].numero;
+                    users.Add(new User() { Id = line.ID, Name = line.Nome, CPF = line.CPF, Numero = numero });
+                } 
+                catch
+                {
+                    var numero = 0;
+                    users.Add(new User() { Id = line.ID, Name = line.Nome, CPF = line.CPF, Numero = numero });
+                }
+            };
 
             ToDo.ItemsSource = users;
         }

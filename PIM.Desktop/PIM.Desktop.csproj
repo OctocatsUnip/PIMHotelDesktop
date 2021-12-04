@@ -210,19 +210,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MVVM\View\PaineldeStatus.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MVVM\View\PaineldeReservas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MVVM\View\PaineldeStatus.xaml.cs">
-      <DependentUpon>PaineldeStatus.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MVVM\View\PaineldeReservas.xaml.cs">
       <DependentUpon>PaineldeReservas.xaml</DependentUpon>
     </Compile>

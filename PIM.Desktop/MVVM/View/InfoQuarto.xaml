@@ -68,7 +68,7 @@
                        Grid.Column="9"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"/>
-            
+
 
         </Grid>
 
@@ -91,8 +91,8 @@
                 Background="#2C3333" Width="902">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="70*"/>
-                <ColumnDefinition Width="377*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="16" Margin="10,28,0,0" TextWrapping="Wrap" Text="Nome do Quarto :" VerticalAlignment="Top" Width="109" Foreground="#FFF7F5F5" FontWeight="Bold"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="19" Margin="10,49,0,0" TextWrapping="Wrap" Text="Quarto Deluxe" VerticalAlignment="Top" Width="136" Foreground="#FFF7EEEE" FontSize="14"/>
@@ -103,8 +103,10 @@
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="17" Margin="93,305,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="26" Foreground="#FFF1F1F1" RenderTransformOrigin="0,-0.706"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="25,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Text="Banheiros:" FontWeight="Bold" Foreground="#FFF1E3E3" FontSize="14"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="17" Margin="93,332,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="26" Foreground="#FFEEEEEE" RenderTransformOrigin="1.019,3.794"/>
-            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="373,276,0,0" TextWrapping="Wrap" Text="Café da manhã : Incluso" VerticalAlignment="Top" Width="165" Foreground="White" FontSize="14"/>
-            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="373,305,0,0" TextWrapping="Wrap" Text="Vaga de estacionamento: Incluso" VerticalAlignment="Top" Width="212" Foreground="White" FontSize="14"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="373,276,0,0" TextWrapping="Wrap" Text="Café da manhã : Incluso" VerticalAlignment="Top" Width="165" Foreground="White" FontSize="14" Height="19"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="373,305,0,0" TextWrapping="Wrap" Text="Vaga de estacionamento: Incluso" VerticalAlignment="Top" Width="212" Foreground="White" FontSize="14" Height="19"/>
+            <Button Content="Home" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,380,0,0" VerticalAlignment="Top" Width="133"/>
+            <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="716,380,0,0" VerticalAlignment="Top" Width="128"/>
         </Grid>
 
 

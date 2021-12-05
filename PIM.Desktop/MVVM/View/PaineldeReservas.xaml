@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PIM.Desktop"
         mc:Ignorable="d"
-        Title="PaineldeReservas"   Height="731" Width="900"
+        Title="PaineldeReservas"   Height="599" Width="900"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="#2C3333">
-    <Grid>
+    <Grid Margin="0,0,0,127">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="390"></RowDefinition>
         </Grid.RowDefinitions>
@@ -43,29 +43,6 @@
 
 
 
-            <TextBlock Text="Home"
-                       Foreground="White"
-                       Grid.Column="2"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-
-            <TextBlock Text="Quartos"
-                       Foreground="White"
-                       Grid.Column="3"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-
-            <TextBlock Text="Hóspedes"
-                       Foreground="White"
-                       Grid.Column="4"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-
-            <TextBlock Text="Facilidades"
-                       Foreground="White"
-                       Grid.Column="9"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
 
 
 
@@ -83,71 +60,33 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Label Grid.ColumnSpan="2" Content="+ Painel de Reservas" HorizontalAlignment="Left" Height="34" Margin="136,-3,0,0" VerticalAlignment="Top" Width="154" FontWeight="Bold" FontSize="14" Foreground="#FFF9F7F7"/>
+            <Label Grid.ColumnSpan="3" Content="Painel de lista de reservas
+                   " HorizontalAlignment="Left" Height="34" Margin="136,-3,0,0" VerticalAlignment="Top" Width="181" FontWeight="Bold" FontSize="14" Foreground="#FFF9F7F7"/>
         </Grid>
 
 
         <Grid Grid.Row="2"            
           
-                Background="#2C3333" Margin="0,0,10,-147">
+                Background="#2C3333" Margin="0,0,10,-102">
 
 
-            <ListBox Name="listBoxQuartos"  
-                 Background="#2C3333"
-                 Foreground="White" Margin="0,58,0,0" Height="480" VerticalAlignment="Top"
-                         >
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="100"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Path=Nome_quarto, StringFormat='Nome: {0}'}"
-                                       FontSize="14" 
-                                       Grid.Row="0" 
-                                       Grid.Column="0" 
-                                       Grid.ColumnSpan="2"/>
-                            <TextBlock Text="{Binding Path=Quantia_camas, StringFormat='Camas: {0}'}" 
-                                       FontSize="12" 
-                                       Grid.Row="1" 
-                                       Grid.Column="0"/>
-                            <TextBlock Text="{Binding Path=Hospede, StringFormat= 'Hospede {0}'}" 
-                                       FontSize="12" 
-                                       Grid.Row="1"
-                                       Grid.Column="1"/>
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="130"/>
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="2">
+                <DataGrid
+                Name="ToDo"
+                Background="Transparent" IsReadOnly="True"
+            ></DataGrid>
+            </Grid>
 
 
 
         </Grid>
-        <Button Content="Button"
-                HorizontalAlignment="Left" 
-                Height="30"
-                Margin="702,594,0,-233" 
-                Grid.Row="2" 
-                VerticalAlignment="
-                Top" Width="124"/>
-        
-        
-        
-        <Button Content="Home"
-                Name="btnHome"
-                Click="btnHome_Click"
-                HorizontalAlignment="Left"
-                Height="30" 
-                Margin="56,594,0,-233"
-                Grid.Row="2" 
-                VerticalAlignment="Top"
-                Width="104"/>
 
 
 

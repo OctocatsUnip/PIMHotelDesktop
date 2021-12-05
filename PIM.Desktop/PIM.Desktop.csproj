@@ -90,6 +90,7 @@
     <Compile Include="MVVM\View\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\HttpClient.cs" />
     <Compile Include="MVVM\View\InfoQuarto.xaml.cs">
       <DependentUpon>InfoQuarto.xaml</DependentUpon>
     </Compile>
@@ -128,6 +129,7 @@
     <Compile Include="MVVM\View\UsuarioFuncionario.xaml.cs">
       <DependentUpon>UsuarioFuncionario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="System\Net\Http.cs" />
     <Page Include="assets\styles\MenuItem.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

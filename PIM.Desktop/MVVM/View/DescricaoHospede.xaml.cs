@@ -24,26 +24,24 @@ namespace PIM.Desktop
         public DescricaoHospede()
         {
             InitializeComponent();
+            ListaHospedesModel listaHospedesModel = new ListaHospedesModel();
         }
 
-        private void MostrarDados()
+        public void MostrarDados(ListaHospedesModel pessoas)
         {
-            ListaHospedesModel usuarioFuncionario = new ListaHospedesModel()
-            {
-                Nome = Convert.ToString(txtNome.Text),
-                RG = Convert.ToString(txtRg.Text),
-                CPF = Convert.ToString(txtCpf.Text),
-                Data_Nascimento = Convert.ToDateTime(txtDtNascimento.Text),
-                Sexo = Convert.ToString(txtSexo.Text),
-                Telefone = Convert.ToString(txtTelefone.Text),
-                Celular = Convert.ToString(txtCelular.Text),
-                Endereco = Convert.ToString(txtEndereco.Text),
-                Numero = Convert.ToInt16(txtNumero.Text),
-                Bairro = Convert.ToString(txtBairro.Text),
-                Cidade = Convert.ToString(txtCidade.Text),
-                Estado = Convert.ToString(txtEstado.Text),
-                CEP = Convert.ToInt16(txtCep.Text),
-            };
+            txtNome.Text = pessoas.Nome;
+            txtRg.Text = pessoas.RG;
+            txtCpf.Text = pessoas.CPF;
+            txtDtNascimento.Text = Convert.ToString(pessoas.Data_Nascimento);
+            txtSexo.Text = pessoas.Sexo;
+            txtTelefone.Text = Convert.ToString(pessoas.Telefone_owner[0].numero);
+            txtCelular.Text = Convert.ToString(pessoas.Telefone_owner[1].numero);
+            txtEndereco.Text = pessoas.Endereco_owner.Logradouro;
+            txtNumero.Text = Convert.ToString(pessoas.Endereco_owner.Numero);
+            txtBairro.Text = pessoas.Endereco_owner.Bairro;
+            txtCidade.Text = pessoas.Endereco_owner.Cidade;
+            txtEstado.Text = pessoas.Endereco_owner.Estado;
+            txtCep.Text = Convert.ToString(pessoas.Endereco_owner.CEP);
         }
     }
 }

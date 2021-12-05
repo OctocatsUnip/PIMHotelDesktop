@@ -35,7 +35,15 @@
                 Name="btnPesquisar"
                 Content="Pesquisar"
                 Grid.Column="1"
-                Margin="22 12 22 12" Click="btnPesquisar_Click_1"
+                Margin="5,12,101,12" 
+                Click="btnPesquisar_Click_1"
+             />
+            <Button
+                x:Name="btnPesquisar_Detalhes"
+                Content="Mais detalhes"
+                Grid.Column="1"
+                Margin="102,12,4,12" 
+Click="btnPesquisar_Detalhes_1"
              />
         </Grid>
 

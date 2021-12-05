@@ -235,19 +235,6 @@
         />
 
         <!-- Pais -->
-        <Label
-            Grid.Column="5"
-            Grid.Row="10"
-            VerticalAlignment="Bottom"
-            Foreground="White"
-        >País:</Label>
-        <TextBox
-            Grid.Column="5"
-            Grid.Row="11"
-            Background="Transparent"
-            Foreground="White"
-            x:Name="txtPais"
-        />
 
         <!-- Estado -->
         <Label

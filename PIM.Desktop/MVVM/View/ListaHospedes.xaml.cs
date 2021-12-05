@@ -27,18 +27,18 @@ namespace PIM.Desktop
         {
             ListaHospedesModel dados = new ListaHospedesModel();
             InitializeComponent();
-            ListaTodos(dados);
+            ListaTodos();
         }
 
         public class User
         {
             public int Id { get; set; }
-            public string Name { get; set; }
+            public string Nome { get; set; }
             public string CPF{ get; set; }
             public int Numero { get; set; }
         }
 
-        private void ListaTodos(ListaHospedesModel dados)
+        private void ListaTodos()
         {
             var response = client.GetStringAsync(Url + "lista_dados_pessoas").Result;
             var pessoas = JsonConvert.DeserializeObject<List<ListaHospedesModel>>(response);
@@ -50,12 +50,12 @@ namespace PIM.Desktop
                 try
                 {
                     var numero = line.Telefone_owner[0].numero;
-                    users.Add(new User() { Id = line.ID, Name = line.Nome, CPF = line.CPF, Numero = numero });
+                    users.Add(new User() { Id = line.ID, Nome = line.Nome, CPF = line.CPF, Numero = numero });
                 }
                 catch
                 {
                     var numero = 0;
-                    users.Add(new User() { Id = line.ID, Name = line.Nome, CPF = line.CPF, Numero = numero });
+                    users.Add(new User() { Id = line.ID, Nome = line.Nome, CPF = line.CPF, Numero = numero });
                 }
             };
 
@@ -79,16 +79,33 @@ namespace PIM.Desktop
                 try 
                 {
                     var numero = line.Telefone_owner[0].numero;
-                    users.Add(new User() { Id = line.ID, Name = line.Nome, CPF = line.CPF, Numero = numero });
+                    users.Add(new User() { Id = line.ID, Nome = line.Nome, CPF = line.CPF, Numero = numero });
                 } 
                 catch
                 {
                     var numero = 0;
-                    users.Add(new User() { Id = line.ID, Name = line.Nome, CPF = line.CPF, Numero = numero });
+                    users.Add(new User() { Id = line.ID, Nome = line.Nome, CPF = line.CPF, Numero = numero });
                 }
             };
 
             ToDo.ItemsSource = users;
+        }
+
+        private void MaisDetalhes(ListaHospedesModel filtro)
+        {
+            if (filtro.CPF == "")
+            {
+                MessageBox.Show("O filtro não foi preenchido!!");
+                return;
+            }
+
+            var response = client.GetStringAsync(Url + "dados_pessoas_detalhes/" + filtro.CPF).Result;
+            var pessoas = JsonConvert.DeserializeObject<ListaHospedesModel>(response);
+
+            DescricaoHospede telaDescricaoHospede = new DescricaoHospede();
+            telaDescricaoHospede.MostrarDados(pessoas);
+            telaDescricaoHospede.Show();
+            this.Close();
         }
 
         private void btnPesquisar_Click_1(object sender, RoutedEventArgs e)
@@ -100,5 +117,16 @@ namespace PIM.Desktop
 
             this.FiltrarDados(filtro);
         }
+
+        private void btnPesquisar_Detalhes_1(object sender, RoutedEventArgs e)
+        {
+            ListaHospedesModel filtro = new ListaHospedesModel()
+            {
+                CPF = Convert.ToString(txtFiltro.Text),
+            };
+
+            this.MaisDetalhes(filtro);
+        }
+
     }
 }

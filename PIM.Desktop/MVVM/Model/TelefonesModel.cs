@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PIM.Desktop.MVVM.Model
 {
-    class TelefonesModel
+    public class TelefonesModel
     {
         public int numero { get; set; }
     }

@@ -79,6 +79,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MVVM\Model\BeneficiosModel.cs" />
+    <Compile Include="MVVM\Model\EnderecoModel.cs" />
     <Compile Include="MVVM\Model\FuncionariosModel.cs" />
     <Compile Include="MVVM\Model\HospedeModel.cs" />
     <Compile Include="MVVM\Model\ListaHospedesModel .cs" />

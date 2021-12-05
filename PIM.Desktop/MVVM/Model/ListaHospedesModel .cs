@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PIM.Desktop.MVVM.Model
 {
-    class ListaHospedesModel
+    public class ListaHospedesModel
     {
         public int ID{ get; set; }
         public string Nome { get; set; }
@@ -22,5 +22,6 @@ namespace PIM.Desktop.MVVM.Model
         public string Estado { get; set; }
         public int CEP { get; set; }
         public List<TelefonesModel> Telefone_owner { get; set; }
+        public EnderecoModel Endereco_owner { get; set; }
     }
 }

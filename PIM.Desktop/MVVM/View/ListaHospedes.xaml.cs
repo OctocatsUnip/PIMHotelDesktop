@@ -105,7 +105,6 @@ namespace PIM.Desktop
             DescricaoHospede telaDescricaoHospede = new DescricaoHospede();
             telaDescricaoHospede.MostrarDados(pessoas);
             telaDescricaoHospede.Show();
-            this.Close();
         }
 
         private void btnPesquisar_Click_1(object sender, RoutedEventArgs e)

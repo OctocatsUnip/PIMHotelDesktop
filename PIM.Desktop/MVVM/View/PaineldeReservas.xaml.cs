@@ -25,8 +25,6 @@ namespace PIM.Desktop
         private string Url = "http://localhost:5000/";
         HttpClient client = new HttpClient();
 
-        public object JsonConvert { get; private set; }
-
         public PaineldeReservas()
         {
             client.BaseAddress = new Uri(Url);

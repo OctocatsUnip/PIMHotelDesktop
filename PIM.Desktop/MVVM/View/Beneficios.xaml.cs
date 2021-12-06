@@ -51,6 +51,7 @@ namespace PIM.Desktop.MVVM.View
         private void SaveBeneficio(BeneficiosModel beneficio)
         {
             client.PostAsJsonAsync(Url, beneficio);
+            this.Close();
         }
 
 

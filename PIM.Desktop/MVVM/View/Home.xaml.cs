@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PIM.Desktop.MVVM.Model;
+using PIM.Desktop.MVVM.View;
 
 namespace PIM.Desktop.MVVM.View
 {
@@ -53,6 +54,56 @@ namespace PIM.Desktop.MVVM.View
 
             listBoxPessoa.ItemsSource = pessoas;
 
+        }
+
+        private void mnuCadastrarQuartos_Click(object sender, RoutedEventArgs e)
+        {
+            CadastroQuarto telaCadastroQuarto = new CadastroQuarto();
+            telaCadastroQuarto.Show();
+        }
+        
+        private void mnuReservas_Click(object sender, RoutedEventArgs e)
+        {
+            DescricaoReserva telaDescricaoReserva = new DescricaoReserva();
+            telaDescricaoReserva.Show();
+        }
+        private void mnuInfoQuartos_Click(object sender, RoutedEventArgs e)
+        {
+            InfoQuarto telaInfoQuarto = new InfoQuarto();
+            telaInfoQuarto.Show();
+        }
+        private void mnuListaHospedes_Click(object sender, RoutedEventArgs e)
+        {
+            ListaHospedes telaListaHospedes = new ListaHospedes();
+            telaListaHospedes.Show();
+        }
+        private void mnuDescricoesHospede_Click(object sender, RoutedEventArgs e)
+        {
+            DescricaoHospede telaDescricaoHospede = new DescricaoHospede();
+            telaDescricaoHospede.Show();
+        }
+        
+        private void mnuCadastrarBeneficio_Click(object sender, RoutedEventArgs e)
+        {
+            Beneficios telaBeneficios = new Beneficios();
+            telaBeneficios.Show();
+        }
+        private void mnuCadastrarFuncionario_Click(object sender, RoutedEventArgs e)
+        {
+            CadastroFuncionarios telaCadastroFuncionarios = new CadastroFuncionarios();
+            telaCadastroFuncionarios.Show();
+        }
+
+        private void mnuCadastrarReservas_Click(object sender, RoutedEventArgs e)
+        {
+            CadastroReserva telaCadastroReserva = new CadastroReserva();
+            telaCadastroReserva.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.GetPessoas();
+            this.GetQuartos();
         }
     }
 }

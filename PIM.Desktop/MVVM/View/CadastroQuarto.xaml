@@ -140,6 +140,7 @@
             Grid.Row="10"
             Background="Transparent"
             Foreground="White"
+            TextWrapping="Wrap"
         />
 
         <Label

@@ -17,15 +17,121 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
+        
+
+        <Grid Grid.Column="0" Background="#4B5B5B">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="1">
+            
+            <Image 
+            Source="../../assets/images/logo.png"
+            Width="130"
+            />
+                
 
-                <StackPanel>
+            <Grid Grid.Row="1">
+                <DockPanel>
+                    <Menu 
+                        DockPanel.Dock="Left"
+                        Background="#4B5B5B"
+                        Margin="0 30 0 0"
+                        >
+                        <Menu.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </Menu.ItemsPanel>
+                        <MenuItem 
+                            Header="_Quartos"
+                            Foreground="#fff"
+                            FontSize="16"
+                            Margin="10"
+                            >
+                            <MenuItem 
+                                Header="_Cadastrar"
+                                Background="#4B5B5B"
+                                BorderBrush="#4B5B5B"
+                                Click="mnuCadastrarQuartos_Click"
+                               
+                                />
+                            <MenuItem 
+                                Header="_Reservas"
+                                Background="#4B5B5B"
+                                BorderBrush="#4B5B5B"
+                                Click="mnuReservas_Click"
+                                
+                                
+                                />
+                            <MenuItem 
+                                Header="_Informações"
+                                Background="#4B5B5B"
+                                BorderBrush="#4B5B5B"
+                                Click="mnuInfoQuartos_Click"
+                                
+                                
+                                />
+                        </MenuItem>
+                        <MenuItem 
+                            Header="_Hóspedes" 
+                            Foreground="#fff" 
+                            FontSize="16" 
+                            Margin="10"
+                            >
+                            <MenuItem 
+                                Header="_Lista"
+                                Background="#4B5B5B"
+                                BorderBrush="#4B5B5B"
+                                Click="mnuListaHospedes_Click"
+                                
+                                />
+                            <MenuItem 
+                                Header="_Descrições" 
+                                Background="#4B5B5B"
+                                BorderBrush="#4B5B5B"
+                                Click="mnuDescricoesHospede_Click"
+                                
+                                />
+                            
+                        </MenuItem>
+                        <MenuItem 
+                            Header="_Cadastros" 
+                            Foreground="#fff" 
+                            FontSize="16" 
+                            Margin="10"
+                            >
+                            <MenuItem 
+                                Header="_Beneficio"
+                                Background="#4B5B5B"
+                                BorderBrush="#4B5B5B"
+                                Click="mnuCadastrarBeneficio_Click"
+                                
+                                />
+                            <MenuItem 
+                                Header="_Funcionario"
+                                Background="#4B5B5B"
+                                BorderBrush="#4B5B5B"
+                                Click="mnuCadastrarFuncionario_Click"
+                                
+                                />
+                            <MenuItem 
+                                Header="_Reservas"
+                                Background="#4B5B5B"
+                                BorderBrush="#4B5B5B"
+                                Click="mnuCadastrarReservas_Click"
+                                
+                                
+                                />
+                            
+                        </MenuItem>
+                        
+                    </Menu>
+                    
+                </DockPanel>
+
+                <!--<StackPanel>
 
                     <Button Content="Home"
                               Height="50"
@@ -67,19 +173,32 @@
                             Margin="20, 0"
                              />
 
-                </StackPanel>
+                </StackPanel>-->
             </Grid>
         </Grid>
 
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="250"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="250"/>
+                <RowDefinition />
             </Grid.RowDefinitions>
+
+            <TextBlock
+                Grid.Row="0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Foreground="#fff"
+                FontSize="20"
+            >
+            Lista de Quartos
+            </TextBlock>
 
             <!-- Main -->
             <Grid Grid.Row="1">
+                
                 <ListBox Name="listBoxQuartos"  
                  Background="#2C3333"
                  Foreground="White"
@@ -116,7 +235,17 @@
 
             </Grid>
 
-            <Grid Grid.Row="2">
+            <TextBlock
+                Grid.Row="2"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Foreground="#fff"
+                FontSize="20"
+            >
+            Lista de Hospedes
+            </TextBlock>
+
+            <Grid Grid.Row="3">
                 <ListBox Name="listBoxPessoa"  
                  Background="#2C3333"
                  Foreground="White"
@@ -156,6 +285,11 @@
                 </ListBox>
 
             </Grid>
+            <Button 
+                Grid.Row="4"
+                Height="40"
+                Width="100" Click="Button_Click"
+                >Refresh</Button>
         </Grid>
 
     </Grid>

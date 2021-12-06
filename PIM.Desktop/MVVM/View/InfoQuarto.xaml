@@ -5,88 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PIM.Desktop"
         mc:Ignorable="d"
-        Title="InfoQuarto"  Height="500" Width="900"
-        WindowStyle="None"
-        ResizeMode="NoResize"
+        Title="InfoQuarto"  Height="600" Width="900"
+       
         Background="#2C3333">
 
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition Height="31"></RowDefinition>
+            
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Grid 
-            Background="#4B5B5B" 
-            Grid.Row="0"
-        >
+        
+        
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-
-
-
-
-
-
-            <TextBlock Text="Home"
-                       Foreground="White"
-                       Grid.Column="2"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-
-            <TextBlock Text="Quartos"
-                       Foreground="White"
-                       Grid.Column="3"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-
-            <TextBlock Text="Hóspedes"
-                       Foreground="White"
-                       Grid.Column="4"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-
-            <TextBlock Text="Facilidades"
-                       Foreground="White"
-                       Grid.Column="9"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-
-
-        </Grid>
-
-        <Grid 
-            Background="#94A098" 
-            Grid.Row="1"
-        >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-        </Grid>
-
-        <Grid Grid.Row="2"            
+        <Grid Grid.Row="0"            
           
                 Background="#2C3333" Width="902">
 
@@ -105,8 +38,7 @@
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="17" Margin="93,332,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="26" Foreground="#FFEEEEEE" RenderTransformOrigin="1.019,3.794"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="373,276,0,0" TextWrapping="Wrap" Text="Café da manhã : Incluso" VerticalAlignment="Top" Width="165" Foreground="White" FontSize="14" Height="19"/>
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="373,305,0,0" TextWrapping="Wrap" Text="Vaga de estacionamento: Incluso" VerticalAlignment="Top" Width="212" Foreground="White" FontSize="14" Height="19"/>
-            <Button Content="Home" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,380,0,0" VerticalAlignment="Top" Width="133"/>
-            <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="716,380,0,0" VerticalAlignment="Top" Width="128"/>
+            
         </Grid>
 
 

@@ -21,7 +21,7 @@ namespace PIM.Desktop
     /// </summary>
     public partial class CadastroQuarto : Window
     {
-        private string Url = "http://localhost:5000/quarto";
+        private string Url = "http://localhost:5000/quartos";
         HttpClient client = new HttpClient();
 
         public CadastroQuarto()
@@ -55,6 +55,7 @@ namespace PIM.Desktop
         private void SaveQuarto(QuartosModel quartos)
         {
             client.PostAsJsonAsync(Url, quartos);
+            this.Close();
         }
 
         private void room_description_TextChanged(object sender, TextChangedEventArgs e)
